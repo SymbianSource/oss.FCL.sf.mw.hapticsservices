@@ -1,0 +1,16 @@
+// Created by TraceCompiler1.1.6
+// DO NOT EDIT, CHANGES WILL BE LOST
+
+#ifndef __TACTILEAREAREGISTRYTRACES_H__
+#define __TACTILEAREAREGISTRYTRACES_H__
+
+#define KOstTraceComponentID 0x2000b492
+
+#define TACTILE_REGISTRY_HIT_TEST_1 0x400001
+#define TACTILE_REGISTRY_HIT_TEST_0 0x400002
+
+
+#endif
+
+// End of file
+

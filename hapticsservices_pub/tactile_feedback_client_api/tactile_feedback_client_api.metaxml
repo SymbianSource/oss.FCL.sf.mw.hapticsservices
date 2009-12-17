@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<api id="7a713853e06f376f69d4bcf955ec3e1b" dataversion="1.0">
+  <name>Tactile Feedback Client API</name>
+  <description>Provides applications and UI controls a centralized way for producing tactile feedback for different touch events.</description>
+  <type>c++</type>
+  <subsystem>tactilefeedback</subsystem>
+  <libs>
+    <lib name="touchfeedback.lib" />
+  </libs>
+  <release category="sdk" sinceversion="5.0"/>
+  <attributes>
+     <!-- This indicates wether the api provedes separate html documentation -->
+     <!-- or is the additional documentation generated from headers. -->
+     <!-- If you are unsuere then the value is "no" -->
+     <htmldocprovided>no</htmldocprovided>
+     <adaptation>no</adaptation>
+  </attributes>
+</api>

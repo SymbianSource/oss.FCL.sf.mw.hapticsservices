@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<api id="f6aad1a936be79a3cc0d6716d0325565" dataversion="1.0">
+  <name>Tactile Feedback Server API</name>
+  <description>Provides Tactile Feedback -functionality for Anim Dll plugins.</description>
+  <type>c++</type>
+  <subsystem>tactilefeedback</subsystem>
+  <libs>
+    <lib name="tactileclickplugin.lib" />
+  </libs>
+  <release category="domain"/>
+  <attributes>
+     <!-- This indicates wether the api provedes separate html documentation -->
+     <!-- or is the additional documentation generated from headers. -->
+     <!-- If you are unsuere then the value is "no" -->
+     <htmldocprovided>no</htmldocprovided>
+     <adaptation>no</adaptation>
+  </attributes>
+</api>

@@ -1,0 +1,16 @@
+// Created by TraceCompiler1.1.6
+// DO NOT EDIT, CHANGES WILL BE LOST
+
+#ifndef __TACTILETONEPLAYERTRACES_H__
+#define __TACTILETONEPLAYERTRACES_H__
+
+#define KOstTraceComponentID 0x2001cb9c
+
+#define TACTILE_PLAY_AUDIO_TONE_FEEDBACK_1 0x400001
+#define TACTILE_PLAY_AUDIO_TONE_FEEDBACK_0 0x400002
+
+
+#endif
+
+// End of file
+

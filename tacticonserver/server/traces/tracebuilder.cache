@@ -1,0 +1,52 @@
+<model>
+  <id>537001549</id>
+  <name>tacticonserver</name>
+  <group>
+    <id>64</id>
+    <name>TACTICON_PERFORMANCE</name>
+    <trace>
+      <text>e_TACTICON_SERVER_PLAY_TACTICON 1</text>
+      <id>1</id>
+      <name>TACTICON_SERVER_PLAY_TACTICON_1</name>
+      <location>
+        <file>../src/tacticonserver.cpp</file>
+        <line>213</line>
+        <class>CTacticonServer</class>
+        <function>PlayTacticon</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTICON_SERVER_PLAY_TACTICON 0</text>
+      <id>2</id>
+      <name>TACTICON_SERVER_PLAY_TACTICON_0</name>
+      <location>
+        <file>../src/tacticonserver.cpp</file>
+        <line>218</line>
+        <class>CTacticonServer</class>
+        <function>PlayTacticon</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTICON_SERVER_STOP_TACTICON 1</text>
+      <id>3</id>
+      <name>TACTICON_SERVER_STOP_TACTICON_1</name>
+      <location>
+        <file>../src/tacticonserver.cpp</file>
+        <line>235</line>
+        <class>CTacticonServer</class>
+        <function>StopTacticon</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTICON_SERVER_STOP_TACTICON 0</text>
+      <id>4</id>
+      <name>TACTICON_SERVER_STOP_TACTICON_0</name>
+      <location>
+        <file>../src/tacticonserver.cpp</file>
+        <line>240</line>
+        <class>CTacticonServer</class>
+        <function>StopTacticon</function>
+      </location>
+    </trace>
+  </group>
+</model>

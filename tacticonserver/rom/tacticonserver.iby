@@ -1,0 +1,44 @@
+/*
+* Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+* 
+* Description: IBY file for Tacticon server.
+* Part of    : Tacticon Server
+*/
+
+#ifndef TACTICONSERVER_IBY
+#define TACTICONSERVER_IBY
+
+#include <bldvariant.hrh>
+#include <data_caging_paths_for_iby.hrh>
+
+
+// =============================================================================
+// Tacticon Client
+// =============================================================================
+file=ABI_DIR\BUILD_DIR\tacticon.dll                SHARED_LIB_DIR\tacticon.dll
+
+
+#ifdef FF_TACTICONS
+
+// =============================================================================
+// Tacticon Server
+// =============================================================================
+// if feature not included remove all server-related stuff..
+file=ABI_DIR\BUILD_DIR\tacticonserver.exe          PROGRAMS_DIR\tacticonserver.exe
+file=ABI_DIR\BUILD_DIR\tacticonpluginfw.dll        PROGRAMS_DIR\tacticonpluginfw.dll
+
+data=DATAZ_\System\Sounds\Digital\tacticons.ivt    System\Sounds\Digital\tacticons.ivt
+
+#endif // FF_TACTICONS
+
+#endif // TACTICONSERVER_IBY

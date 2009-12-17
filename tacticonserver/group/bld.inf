@@ -1,0 +1,30 @@
+/*
+* Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+* 
+* Description: Master bld.inf for Tacticon client and server.
+* Part of    : Tacticon Server
+*/
+
+#include <platform_paths.hrh>
+
+PRJ_EXPORTS
+../rom/tacticonserver.iby               CORE_IBY_EXPORT_PATH(mw, tacticonserver.iby)
+../inc/tacticondomaincrkeys.h           MW_LAYER_PLATFORM_EXPORT_PATH(tacticondomaincrkeys.h)
+
+// Generic configuration interface for component cenrep settings  
+../conf/tacticonserver.confml           APP_LAYER_CONFML(tacticonserver.confml)
+../conf/tacticonserver_2001FE4D.crml    APP_LAYER_CRML(tacticonserver_2001FE4D.crml)
+
+#include "../server/group/bld.inf"
+#include "../client/group/bld.inf"
+#include "../tacticonactionplugin/group/bld.inf"

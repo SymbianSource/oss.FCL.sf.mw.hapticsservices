@@ -1,0 +1,8 @@
+EXPORTS
+	?HandleConnectL@CTactileAreaRegistry@@QAEXABUTTactileFeedbackConnectData@@@Z @ 1 NONAME ; void CTactileAreaRegistry::HandleConnectL(struct TTactileFeedbackConnectData const &)
+	?HandleDisconnect@CTactileAreaRegistry@@QAEXABUTTactileFeedbackDisconnectData@@@Z @ 2 NONAME ; void CTactileAreaRegistry::HandleDisconnect(struct TTactileFeedbackDisconnectData const &)
+	?HandleWindowGroupClosed@CTactileAreaRegistry@@QAEXH@Z @ 3 NONAME ; void CTactileAreaRegistry::HandleWindowGroupClosed(int)
+	?HandleWindowGroupCreated@CTactileAreaRegistry@@QAEXHI@Z @ 4 NONAME ; void CTactileAreaRegistry::HandleWindowGroupCreated(int, unsigned int)
+	?HitTestPointerEvent@CTactileAreaRegistry@@QAE?AW4TTouchLogicalFeedback@@ABUTPointerEvent@@HK@Z @ 5 NONAME ; enum TTouchLogicalFeedback CTactileAreaRegistry::HitTestPointerEvent(struct TPointerEvent const &, int, unsigned long)
+	?NewL@CTactileAreaRegistry@@SAPAV1@XZ @ 6 NONAME ; class CTactileAreaRegistry * CTactileAreaRegistry::NewL(void)
+

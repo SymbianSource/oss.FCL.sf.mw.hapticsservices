@@ -1,0 +1,55 @@
+/*
+* Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+* 
+* Description: Haptics tacticon plugin project definition file.
+* Part of:     Tacticon Server
+*/
+
+#include <data_caging_paths.hrh>
+#include <platform_paths.hrh>
+
+TARGET                  tacticonhapticsplugin.dll
+TARGETTYPE              PLUGIN
+UID                     0x10009D8D 0x2001FE52
+
+CAPABILITY              CAP_ECOM_PLUGIN
+VENDORID                VID_DEFAULT
+
+SOURCEPATH              ../src
+SOURCE                  tacticonhapticsplayer.cpp
+
+USERINCLUDE             ../inc
+USERINCLUDE             ../../inc
+USERINCLUDE             ../../../../inc
+USERINCLUDE             ../traces
+
+MW_LAYER_SYSTEMINCLUDE
+
+SOURCEPATH              ../data
+START RESOURCE          2001FE52.rss
+TARGETPATH              ECOM_RESOURCE_DIR
+TARGET                  tacticonhapticsplugin.rsc
+END
+
+
+#ifdef RD_SYMBIAN_TRACES
+SYSTEMINCLUDE /epoc32/include/internal/symbiantraces
+#endif
+
+LIBRARY                 euser.lib
+LIBRARY                 centralrepository.lib
+LIBRARY                 cenrepnotifhandler.lib
+LIBRARY                 efsrv.lib
+LIBRARY                 ecom.lib
+LIBRARY                 hwrmhapticsclient.lib
+LIBRARY                 tacticonpluginfw.lib

@@ -1,0 +1,45 @@
+/*
+* Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+* 
+* Description: Project definition file for tacticon server.
+* Part of    : Tacticon Server
+*/
+
+#include <platform_paths.hrh>
+#include <data_caging_paths.hrh>
+
+TARGETTYPE      exe
+TARGET          tacticonserver.exe
+UID             0 0x2001FE4D
+
+CAPABILITY      CAP_SERVER
+VENDORID        VID_DEFAULT
+
+SOURCEPATH      ../src
+SOURCE          tacticonserver.cpp
+SOURCE          tacticonsession.cpp
+SOURCE          tacticonshutdown.cpp
+
+USERINCLUDE     ../inc
+USERINCLUDE     ../../inc
+USERINCLUDE     ../tacticonpluginfw/inc
+USERINCLUDE     ../traces
+
+MW_LAYER_SYSTEMINCLUDE
+
+LIBRARY         euser.lib
+LIBRARY         ecom.lib
+LIBRARY         centralrepository.lib
+LIBRARY         tacticonpluginfw.lib
+
+

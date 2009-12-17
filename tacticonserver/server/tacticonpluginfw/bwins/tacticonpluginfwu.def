@@ -1,0 +1,5 @@
+EXPORTS
+	??1CTacticonPlayer@@UAE@XZ @ 1 NONAME ; CTacticonPlayer::~CTacticonPlayer(void)
+	?ListImplementationsL@CTacticonPlayer@@SAXAAV?$RPointerArray@VCImplementationInformation@@@@@Z @ 2 NONAME ; void CTacticonPlayer::ListImplementationsL(class RPointerArray<class CImplementationInformation> &)
+	?NewL@CTacticonPlayer@@SAPAV1@VTUid@@AAVCRepository@@@Z @ 3 NONAME ; class CTacticonPlayer * CTacticonPlayer::NewL(class TUid, class CRepository &)
+

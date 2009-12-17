@@ -1,0 +1,74 @@
+<model>
+  <id>536917139</id>
+  <name>tactileclickplugin</name>
+  <group>
+    <id>64</id>
+    <name>TACTILE_PERFORMANCE</name>
+    <trace>
+      <text>e_TACTILE_CLICK_PLUGIN_PEN_EVENT 1</text>
+      <id>1</id>
+      <name>TACTILE_CLICK_PLUGIN_PEN_EVENT_1</name>
+      <location>
+        <file>../src/tactileclickplugin.cpp</file>
+        <line>134</line>
+        <class>CTactileClickPlugin</class>
+        <function>OtherEvent</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTILE_CLICK_PLUGIN_PEN_EVENT 0</text>
+      <id>2</id>
+      <name>TACTILE_CLICK_PLUGIN_PEN_EVENT_0</name>
+      <location>
+        <file>../src/tactileclickplugin.cpp</file>
+        <line>161</line>
+        <class>CTactileClickPlugin</class>
+        <function>OtherEvent</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTILE_CLICK_PLUGIN_INSTANT_FEEDBACK_SERVER_API 1</text>
+      <id>3</id>
+      <name>TACTILE_CLICK_PLUGIN_INSTANT_FEEDBACK_SERVER_API_1</name>
+      <location>
+        <file>../src/tactileclickplugin.cpp</file>
+        <line>242</line>
+        <class>CTactileClickPlugin</class>
+        <function>InstantFeedback</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTILE_CLICK_PLUGIN_INSTANT_FEEDBACK_SERVER_API 0</text>
+      <id>4</id>
+      <name>TACTILE_CLICK_PLUGIN_INSTANT_FEEDBACK_SERVER_API_0</name>
+      <location>
+        <file>../src/tactileclickplugin.cpp</file>
+        <line>246</line>
+        <class>CTactileClickPlugin</class>
+        <function>InstantFeedback</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTILE_CLICK_PLUGIN_INSTANT_FEEDBACK_CLIENT_API 1</text>
+      <id>5</id>
+      <name>TACTILE_CLICK_PLUGIN_INSTANT_FEEDBACK_CLIENT_API_1</name>
+      <location>
+        <file>../src/tactileclickplugin.cpp</file>
+        <line>343</line>
+        <class>CTactileClickPlugin</class>
+        <function>HandleImmediateFeedback</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTILE_CLICK_PLUGIN_INSTANT_FEEDBACK_CLIENT_API 0</text>
+      <id>6</id>
+      <name>TACTILE_CLICK_PLUGIN_INSTANT_FEEDBACK_CLIENT_API_0</name>
+      <location>
+        <file>../src/tactileclickplugin.cpp</file>
+        <line>349</line>
+        <class>CTactileClickPlugin</class>
+        <function>HandleImmediateFeedback</function>
+      </location>
+    </trace>
+  </group>
+</model>

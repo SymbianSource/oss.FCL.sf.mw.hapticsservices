@@ -1,0 +1,30 @@
+<model>
+  <id>536917137</id>
+  <name>touchfeedback</name>
+  <group>
+    <id>64</id>
+    <name>TACTILE_PERFORMANCE</name>
+    <trace>
+      <text>e_TACTILE_CLIENT_INSTANT_FEEDBACK 1</text>
+      <id>1</id>
+      <name>TACTILE_CLIENT_INSTANT_FEEDBACK_1</name>
+      <location>
+        <file>../src/touchfeedbackclient.cpp</file>
+        <line>502</line>
+        <class>CTouchFeedbackClient</class>
+        <function>ImmediateFeedback</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTILE_CLIENT_INSTANT_FEEDBACK 0</text>
+      <id>2</id>
+      <name>TACTILE_CLIENT_INSTANT_FEEDBACK_0</name>
+      <location>
+        <file>../src/touchfeedbackclient.cpp</file>
+        <line>509</line>
+        <class>CTouchFeedbackClient</class>
+        <function>ImmediateFeedback</function>
+      </location>
+    </trace>
+  </group>
+</model>

@@ -1,0 +1,9 @@
+EXPORTS
+	_ZN15CTacticonPlayer20ListImplementationsLER13RPointerArrayI26CImplementationInformationE @ 1 NONAME
+	_ZN15CTacticonPlayer4NewLE4TUidR11CRepository @ 2 NONAME
+	_ZN15CTacticonPlayerD0Ev @ 3 NONAME
+	_ZN15CTacticonPlayerD1Ev @ 4 NONAME
+	_ZN15CTacticonPlayerD2Ev @ 5 NONAME
+	_ZTI15CTacticonPlayer @ 6 NONAME ; #<TI>#
+	_ZTV15CTacticonPlayer @ 7 NONAME ; #<VT>#
+

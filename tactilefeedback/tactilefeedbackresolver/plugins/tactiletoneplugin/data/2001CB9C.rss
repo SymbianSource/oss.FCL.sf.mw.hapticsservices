@@ -1,0 +1,45 @@
+/*
+* Copyright (c) 2008 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  ECom registration file for Tactile Audio Tone player plugin.
+* Part of:      Tactile Feedback.
+*
+*/
+
+
+#include <ecom/registryinfo.rh>
+
+RESOURCE REGISTRY_INFO theInfo
+    {
+    dll_uid = 0x2001CB9C; 
+    interfaces = 
+        {
+        INTERFACE_INFO
+            {
+            interface_uid = 0x2001CBA7;
+            implementations = 
+                {
+                IMPLEMENTATION_INFO
+                    {
+                    implementation_uid = 0x2001CB9D;
+                    version_no = 1; 
+                    display_name = "";
+                    default_data = "Audio";
+                    opaque_data = ""; 
+                    }
+                };
+            }
+        };
+    }
+
+// End of file

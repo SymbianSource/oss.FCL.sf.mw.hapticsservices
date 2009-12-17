@@ -1,0 +1,32 @@
+/*
+* Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+* 
+* Description: Build information file for tacticon haptics plugin.
+* Part of    : Tacticon Server
+*/
+
+#include <platform_paths.hrh>
+
+PRJ_PLATFORMS
+DEFAULT
+
+PRJ_EXPORTS
+// IBY file
+../rom/tacticonhapticsplugin.iby  CORE_IBY_EXPORT_PATH(mw, tacticonhapticsplugin.iby)
+
+// Generic configuration interface for component cenrep settings  
+../conf/tacticonhapticsplugin.confml           APP_LAYER_CONFML(tacticonhapticsplugin.confml)
+../conf/tacticonhapticsplugin_2001FE52.crml    APP_LAYER_CRML(tacticonhapticsplugin_2001FE52.crml)
+
+PRJ_MMPFILES
+tacticonhapticsplugin.mmp

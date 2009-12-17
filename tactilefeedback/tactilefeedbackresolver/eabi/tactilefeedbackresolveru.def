@@ -1,0 +1,34 @@
+EXPORTS
+	_ZN14CTactilePlayer12StopFeedbackEv @ 1 NONAME
+	_ZN14CTactilePlayer13StartFeedbackE24TTouchContinuousFeedbacki @ 2 NONAME
+	_ZN14CTactilePlayer14ModifyFeedbackEi @ 3 NONAME
+	_ZN14CTactilePlayer19PlayPreviewFeedbackEi21TTouchLogicalFeedback @ 4 NONAME
+	_ZN14CTactilePlayer19StopPreviewFeedbackEv @ 5 NONAME
+	_ZN14CTactilePlayer20StartPreviewFeedbackEi24TTouchContinuousFeedbacki @ 6 NONAME
+	_ZN14CTactilePlayer8MaxLevelEv @ 7 NONAME
+	_ZN14CTactilePlayerD0Ev @ 8 NONAME
+	_ZN14CTactilePlayerD1Ev @ 9 NONAME
+	_ZN14CTactilePlayerD2Ev @ 10 NONAME
+	_ZN16RTactileFeedback12PlayFeedbackE21TTouchLogicalFeedbackii @ 11 NONAME
+	_ZN16RTactileFeedback12StopFeedbackEv @ 12 NONAME
+	_ZN16RTactileFeedback13StartFeedbackE24TTouchContinuousFeedbacki @ 13 NONAME
+	_ZN16RTactileFeedback14ModifyFeedbackEi @ 14 NONAME
+	_ZN16RTactileFeedback19PlayPreviewFeedbackEi21TTouchLogicalFeedback18TTouchFeedbackType @ 15 NONAME
+	_ZN16RTactileFeedback19StopPreviewFeedbackEv @ 16 NONAME
+	_ZN16RTactileFeedback20StartPreviewFeedbackEi24TTouchContinuousFeedbacki18TTouchFeedbackType @ 17 NONAME
+	_ZN16RTactileFeedback21ModifyPreviewFeedbackEi @ 18 NONAME
+	_ZN16RTactileFeedback24FeedbackEnabledForDeviceER18TTouchFeedbackType @ 19 NONAME
+	_ZN16RTactileFeedback27SetFeedbackEnabledForDeviceE18TTouchFeedbackType @ 20 NONAME
+	_ZN16RTactileFeedback5CloseEv @ 21 NONAME
+	_ZN16RTactileFeedback7ConnectEv @ 22 NONAME
+	_ZN16RTactileFeedbackC1Ev @ 23 NONAME
+	_ZN16RTactileFeedbackC2Ev @ 24 NONAME
+	_ZTI14CTactilePlayer @ 25 NONAME ; #<TI>#
+	_ZTI19CTactileFeedbackSrv @ 26 NONAME ; #<TI>#
+	_ZTI23CTactileFeedbackSession @ 27 NONAME ; #<TI>#
+	_ZTI24CTactileFeedbackResolver @ 28 NONAME ; #<TI>#
+	_ZTV14CTactilePlayer @ 29 NONAME ; #<VT>#
+	_ZTV19CTactileFeedbackSrv @ 30 NONAME ; #<VT>#
+	_ZTV23CTactileFeedbackSession @ 31 NONAME ; #<VT>#
+	_ZTV24CTactileFeedbackResolver @ 32 NONAME ; #<VT>#
+

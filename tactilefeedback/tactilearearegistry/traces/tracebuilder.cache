@@ -1,0 +1,30 @@
+<model>
+  <id>536917138</id>
+  <name>tactilearearegistry</name>
+  <group>
+    <id>64</id>
+    <name>TACTILE_PERFORMANCE</name>
+    <trace>
+      <text>e_TACTILE_REGISTRY_HIT_TEST 1</text>
+      <id>1</id>
+      <name>TACTILE_REGISTRY_HIT_TEST_1</name>
+      <location>
+        <file>../src/tactilearearegistry.cpp</file>
+        <line>238</line>
+        <class>CTactileAreaRegistry</class>
+        <function>HitTestPointerEvent</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTILE_REGISTRY_HIT_TEST 0</text>
+      <id>2</id>
+      <name>TACTILE_REGISTRY_HIT_TEST_0</name>
+      <location>
+        <file>../src/tactilearearegistry.cpp</file>
+        <line>263</line>
+        <class>CTactileAreaRegistry</class>
+        <function>HitTestPointerEvent</function>
+      </location>
+    </trace>
+  </group>
+</model>

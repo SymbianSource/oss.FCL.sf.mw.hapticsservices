@@ -1,0 +1,74 @@
+<model>
+  <id>537001550</id>
+  <name>tacticon</name>
+  <group>
+    <id>64</id>
+    <name>TACTICON_PERFORMANCE</name>
+    <trace>
+      <text>e_TACTICON_CLIENT_PLAY_TACTICON 1</text>
+      <id>1</id>
+      <name>TACTICON_CLIENT_PLAY_TACTICON_1</name>
+      <location>
+        <file>../src/tacticon.cpp</file>
+        <line>137</line>
+        <class>RTacticon</class>
+        <function>PlayTacticon</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTICON_CLIENT_PLAY_TACTICON 0</text>
+      <id>2</id>
+      <name>TACTICON_CLIENT_PLAY_TACTICON_0</name>
+      <location>
+        <file>../src/tacticon.cpp</file>
+        <line>140</line>
+        <class>RTacticon</class>
+        <function>PlayTacticon</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTICON_CLIENT_STOP_TACTICON 1</text>
+      <id>3</id>
+      <name>TACTICON_CLIENT_STOP_TACTICON_1</name>
+      <location>
+        <file>../src/tacticon.cpp</file>
+        <line>156</line>
+        <class>RTacticon</class>
+        <function>StopTacticon</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTICON_CLIENT_STOP_TACTICON 0</text>
+      <id>4</id>
+      <name>TACTICON_CLIENT_STOP_TACTICON_0</name>
+      <location>
+        <file>../src/tacticon.cpp</file>
+        <line>161</line>
+        <class>RTacticon</class>
+        <function>StopTacticon</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTICON_CLIENT_ENABLE_TACTICON 1</text>
+      <id>5</id>
+      <name>TACTICON_CLIENT_ENABLE_TACTICON_1</name>
+      <location>
+        <file>../src/tacticon.cpp</file>
+        <line>178</line>
+        <class>RTacticon</class>
+        <function>EnableTacticons</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTICON_CLIENT_ENABLE_TACTICON 0</text>
+      <id>6</id>
+      <name>TACTICON_CLIENT_ENABLE_TACTICON_0</name>
+      <location>
+        <file>../src/tacticon.cpp</file>
+        <line>183</line>
+        <class>RTacticon</class>
+        <function>EnableTacticons</function>
+      </location>
+    </trace>
+  </group>
+</model>

@@ -1,0 +1,35 @@
+<script xmlns="http://www.nokia.com/ns/cep/script/1.0/"
+xmlns:cep="http://www.nokia.com/ns/cep/1.0/">
+    <if>
+        <or>
+            <equals>
+                <contextRef source='Call' type='State'/>
+                <string>Connected</string>
+            </equals>
+            <equals>
+                <contextRef source='Call' type='State'/>
+                <string>Dialling</string>
+            </equals>
+    	</or>
+        <actions>
+            <!-- Tactile feedback off -->
+            <Tactile Feedback='OFF'/>	
+        </actions>
+    </if>
+    <elseIf>
+        <or>
+            <equals>
+                <contextRef source='Call' type='State'/>
+                <string>None</string>
+            </equals>
+            <equals>
+                <contextRef source='Call' type='State'/>
+                <string>Disconnecting</string>
+            </equals>
+        </or>
+        <actions>
+            <!-- Tactile feedback on -->
+            <Tactile Feedback='ON'/>
+        </actions>
+    </elseIf>
+</script>

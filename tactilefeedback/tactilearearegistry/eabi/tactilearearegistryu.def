@@ -1,0 +1,10 @@
+EXPORTS
+	_ZN20CTactileAreaRegistry14HandleConnectLERK27TTactileFeedbackConnectData @ 1 NONAME
+	_ZN20CTactileAreaRegistry16HandleDisconnectERK30TTactileFeedbackDisconnectData @ 2 NONAME
+	_ZN20CTactileAreaRegistry19HitTestPointerEventERK13TPointerEventim @ 3 NONAME
+	_ZN20CTactileAreaRegistry23HandleWindowGroupClosedEi @ 4 NONAME
+	_ZN20CTactileAreaRegistry24HandleWindowGroupCreatedEij @ 5 NONAME
+	_ZN20CTactileAreaRegistry4NewLEv @ 6 NONAME
+	_ZTI20CTactileAreaRegistry @ 7 NONAME ; #<TI>#
+	_ZTV20CTactileAreaRegistry @ 8 NONAME ; #<VT>#
+

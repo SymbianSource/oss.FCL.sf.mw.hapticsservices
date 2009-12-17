@@ -1,0 +1,16 @@
+// Created by TraceCompiler1.1.6
+// DO NOT EDIT, CHANGES WILL BE LOST
+
+#ifndef __TOUCHFEEDBACKCLIENTTRACES_H__
+#define __TOUCHFEEDBACKCLIENTTRACES_H__
+
+#define KOstTraceComponentID 0x2000b491
+
+#define TACTILE_CLIENT_INSTANT_FEEDBACK_1 0x400001
+#define TACTILE_CLIENT_INSTANT_FEEDBACK_0 0x400002
+
+
+#endif
+
+// End of file
+

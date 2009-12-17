@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE SystemDefinition SYSTEM "sysdef_1_4_0.dtd" [
+  <!ENTITY layer_real_source_path "sf/mw/hapticsservices" >
+]>
+
+<SystemDefinition name="hapticsservices" schema="1.4.0">
+  <systemModel>
+    <layer name="mw_layer">
+      <module name="hapticsservices">
+        <unit unitID="abs.hapticsservices" mrp="" bldFile="&layer_real_source_path;/group" name="hapticsservices" />
+        <unit unitID="abs.tactilefeedbackresolver" mrp="" bldFile="&layer_real_source_path;/tactilefeedback/tactilefeedbackresolver/plugins/group" filter="dfs_build" name="tactilefeedbackresolver" />
+        <unit unitID="abs.tacticonhapticsplugin" mrp="" bldFile="&layer_real_source_path;/tacticonserver/server/tacticonpluginfw/tacticonhapticsplugin/group" filter="dfs_build" name="tacticonhapticsplugin" />
+      </module>
+    </layer>
+
+  </systemModel>
+</SystemDefinition>

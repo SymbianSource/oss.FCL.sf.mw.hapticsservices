@@ -1,0 +1,59 @@
+<script xmlns="http://www.nokia.com/ns/cep/script/1.0/"
+xmlns:cep="http://www.nokia.com/ns/cep/1.0/">
+    <if>
+        <equals>
+            <contextRef source='Sensor' type='Event.Proximity'/>
+            <string>Discernible</string>
+        </equals>
+        <actions>
+            <!-- Proximity notify  -->
+            <Tacticon Mode='PROXIMITY_ON'/>	
+        </actions>
+    </if>
+    <elseIf>
+        <equals>
+            <contextRef source='Sensor' type='Event.Proximity'/>
+            <string>Indiscernible</string>
+        </equals>
+        <actions>
+            <!-- Proximity notify  -->
+            <Tacticon Mode='PROXIMITY_OFF'/>	
+        </actions>
+    </elseIf>
+    <elseIf>
+        <equals>
+            <contextRef source='Call' type='State'/>
+            <string>Dialling</string>
+        </equals>
+        <actions>
+            <!-- Disable Tacticons -->
+            <Tacticon Mode='CALL_DIALLING'/>	
+        </actions>
+    </elseIf>
+    <elseIf>
+        <equals>
+            <contextRef source='Call' type='State'/>
+            <string>Connected</string>
+        </equals>
+        <actions>
+            <!-- Disable Tacticons -->
+            <Tacticon Mode='CALL_CONNECTED'/>	
+        </actions>
+    </elseIf>
+    <elseIf>
+        <or>
+            <equals>
+                <contextRef source='Call' type='State'/>
+                <string>None</string>
+            </equals>
+            <equals>
+                <contextRef source='Call' type='State'/>
+                <string>Disconnecting</string>
+            </equals>
+        </or>
+        <actions>
+            <!-- Enable Tacticons -->
+            <Tacticon Mode='CALL_DISCONNECTED'/>	
+        </actions>
+    </elseIf>
+</script>

@@ -1,0 +1,47 @@
+/*
+* Copyright (c) 2007-2009 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  This component maps logical feedback types to physical
+*                feedback effects, and plays the correct effect according
+*                to current settings and system state.
+* Part of:      Tactile Feedback.
+*
+*/
+
+#include <platform_paths.hrh>
+
+PRJ_PLATFORMS
+DEFAULT
+
+PRJ_EXPORTS
+../data/TactileFeedbackEffects.ivt         /epoc32/data/z/private/10003B20/TactileFeedbackEffects.ivt
+../data/TactileFeedbackEffects.ivt         /epoc32/release/winscw/udeb/Z/private/10003B20/TactileFeedbackEffects.ivt
+
+// IBY file
+../rom/tactilefeedbackresolver.iby  CORE_IBY_EXPORT_PATH(mw, tactilefeedbackresolver.iby)
+
+// Private interfaces
+../inc/tactilefeedbackresolver.h           |../../inc/tactilefeedbackresolver.h
+../inc/tactilefeedbackinternalpskeys.h     |../../inc/tactilefeedbackinternalpskeys.h
+../inc/tactilefeedbackprivatecrkeys.h      |../../inc/tactilefeedbackprivatecrkeys.h
+../inc/tactilefeedbackdomaincrkeys.h       |../../inc/tactilefeedbackdomaincrkeys.h
+../inc/tactilepropertyobserver.h           |../../inc/tactilepropertyobserver.h
+../inc/tactilepropertywatcher.h            |../../inc/tactilepropertywatcher.h
+
+
+#ifndef TOOLS
+
+PRJ_MMPFILES
+../group/tactilefeedbackresolver.mmp
+
+#endif // TOOLS

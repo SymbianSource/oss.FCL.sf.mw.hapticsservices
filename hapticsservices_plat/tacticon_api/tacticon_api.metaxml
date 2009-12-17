@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<api id="af93e1836559daaea3540a5a6010167d" dataversion="1.0">
+  <name>Tacticon API</name>
+  <description>Provides an interface for producing tacticons.</description>
+  <type>c++</type>
+  <subsystem>tacticonserver</subsystem>
+  <libs>
+    <lib name="tacticon.lib" />
+  </libs>
+  <release category="domain"/>
+  <attributes>
+     <!-- This indicates wether the api provedes separate html documentation -->
+     <!-- or is the additional documentation generated from headers. -->
+     <!-- If you are unsuere then the value is "no" -->
+     <htmldocprovided>no</htmldocprovided>
+     <adaptation>no</adaptation>
+  </attributes>
+</api>

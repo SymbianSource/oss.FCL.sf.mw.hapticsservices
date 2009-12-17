@@ -1,0 +1,12 @@
+EXPORTS
+	?CreateInstanceL@MTouchFeedback@@SAPAV1@XZ @ 1 NONAME ; class MTouchFeedback * MTouchFeedback::CreateInstanceL(void)
+	?DestroyInstance@MTouchFeedback@@SAXXZ @ 2 NONAME ; void MTouchFeedback::DestroyInstance(void)
+	?Instance@MTouchFeedback@@SAPAV1@XZ @ 3 NONAME ; class MTouchFeedback * MTouchFeedback::Instance(void)
+	?NewL@CTouchFeedbackAdaptation@@SAPAV1@XZ @ 4 NONAME ; class CTouchFeedbackAdaptation * CTouchFeedbackAdaptation::NewL(void)
+	?ControlVisibilityChanged@CTouchFeedbackAdaptation@@QAEXPBVCCoeControl@@@Z @ 5 NONAME ; void CTouchFeedbackAdaptation::ControlVisibilityChanged(class CCoeControl const *)
+	?LayoutChanged@CTouchFeedbackAdaptation@@QAEXXZ @ 6 NONAME ; void CTouchFeedbackAdaptation::LayoutChanged(void)
+	?AddFeedback@CFeedbackSpec@@QAEHW4TTouchEventType@@W4TTouchLogicalFeedback@@@Z @ 7 NONAME ; int CFeedbackSpec::AddFeedback(enum TTouchEventType, enum TTouchLogicalFeedback)
+	?GetFeedbackSpec@CFeedbackSpec@@QAEXAAV?$RArray@UTTactileFbItem@@@@@Z @ 8 NONAME ; void CFeedbackSpec::GetFeedbackSpec(class RArray<struct TTactileFbItem> &)
+	?New@CFeedbackSpec@@SAPAV1@XZ @ 9 NONAME ; class CFeedbackSpec * CFeedbackSpec::New(void)
+	?AddFeedback@CFeedbackSpec@@QAEHW4TTouchEventType@@W4TTouchLogicalFeedback@@W4TTouchFeedbackType@@@Z @ 10 NONAME ; int CFeedbackSpec::AddFeedback(enum TTouchEventType, enum TTouchLogicalFeedback, enum TTouchFeedbackType)
+

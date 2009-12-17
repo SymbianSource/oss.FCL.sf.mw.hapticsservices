@@ -1,0 +1,53 @@
+/*
+* Copyright (c) 2008 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Project definition file for Legacy Vibra Feedback player plugin.
+* Part of:      Tactile Feedback.
+*
+*/
+
+#include <data_caging_paths.hrh>
+#include <platform_paths.hrh>
+
+TARGET                  tactilevibraplugin.dll
+TARGETTYPE              PLUGIN
+UID                     0x10009D8D 0x2001CB9A
+
+CAPABILITY              CAP_ECOM_PLUGIN
+VENDORID                VID_DEFAULT
+
+SOURCEPATH              ../src
+SOURCE                  tactilevibraplayer.cpp
+
+USERINCLUDE             ../inc
+USERINCLUDE             ../../../inc
+USERINCLUDE             ../../../../inc 
+USERINCLUDE             ../traces
+
+// Default system include paths for middleware layer modules.
+MW_LAYER_SYSTEMINCLUDE
+
+SOURCEPATH              ../data
+START RESOURCE          2001CB9A.rss
+TARGETPATH              ECOM_RESOURCE_DIR
+TARGET                  tactilevibraplugin.rsc
+END
+
+
+LIBRARY                 euser.lib
+LIBRARY                 centralrepository.lib
+LIBRARY                 cenrepnotifhandler.lib
+LIBRARY                 efsrv.lib
+LIBRARY                 ecom.lib
+LIBRARY                 hwrmvibraclient.lib
+LIBRARY                 tactilefeedbackresolver.lib

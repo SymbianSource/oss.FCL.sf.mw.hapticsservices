@@ -1,0 +1,62 @@
+<model>
+  <id>537001554</id>
+  <name>tacticonhapticsplugin</name>
+  <group>
+    <id>64</id>
+    <name>TACTICON_PERFORMANCE</name>
+    <trace>
+      <text>e_TACTICON_HAPTICS_PLAYER_PLAY_TACTICON 1 0x%x</text>
+      <id>1</id>
+      <name>TACTICON_HAPTICS_PLAYER_PLAY_TACTICON_1</name>
+      <parameter>
+        <type>hex32</type>
+        <id>1</id>
+        <name>aTacticon</name>
+      </parameter>
+      <location>
+        <file>../src/tacticonhapticsplayer.cpp</file>
+        <line>243</line>
+        <class>CTacticonHapticsPlayer</class>
+        <function>PlayTacticon</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTICON_HAPTICS_PLAYER_PLAY_TACTICON 0 0x%x</text>
+      <id>2</id>
+      <name>TACTICON_HAPTICS_PLAYER_PLAY_TACTICON_0</name>
+      <parameter>
+        <type>hex32</type>
+        <id>1</id>
+        <name>aTacticon</name>
+      </parameter>
+      <location>
+        <file>../src/tacticonhapticsplayer.cpp</file>
+        <line>249</line>
+        <class>CTacticonHapticsPlayer</class>
+        <function>PlayTacticon</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTICON_HAPTICS_PLAYER_STOP_TACTICON 1</text>
+      <id>3</id>
+      <name>TACTICON_HAPTICS_PLAYER_STOP_TACTICON_1</name>
+      <location>
+        <file>../src/tacticonhapticsplayer.cpp</file>
+        <line>261</line>
+        <class>CTacticonHapticsPlayer</class>
+        <function>StopTacticon</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTICON_HAPTICS_PLAYER_STOP_TACTICON 0</text>
+      <id>4</id>
+      <name>TACTICON_HAPTICS_PLAYER_STOP_TACTICON_0</name>
+      <location>
+        <file>../src/tacticonhapticsplayer.cpp</file>
+        <line>266</line>
+        <class>CTacticonHapticsPlayer</class>
+        <function>StopTacticon</function>
+      </location>
+    </trace>
+  </group>
+</model>

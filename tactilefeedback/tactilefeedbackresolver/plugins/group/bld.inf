@@ -1,0 +1,36 @@
+/*
+* Copyright (c) 2008 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Build information file for tactile player plug-ins.
+* Part of:      Tactile Feedback.
+*
+*/
+
+
+#include <platform_paths.hrh>
+
+PRJ_PLATFORMS
+DEFAULT
+
+PRJ_EXPORTS
+// IBY files
+../tactileaudioplugin/rom/tactileaudioplugin.iby  CORE_IBY_EXPORT_PATH(mw, tactileaudioplugin.iby)
+../tactilehapticsplugin/rom/tactilehapticsplugin.iby  CORE_IBY_EXPORT_PATH(mw, tactilehapticsplugin.iby)
+../tactiletoneplugin/rom/tactiletoneplugin.iby  CORE_IBY_EXPORT_PATH(mw, tactiletoneplugin.iby)
+../tactilevibraplugin/rom/tactilevibraplugin.iby  CORE_IBY_EXPORT_PATH(mw, tactilevibraplugin.iby)
+
+PRJ_MMPFILES
+../tactilehapticsplugin/group/tactilehapticsplugin.mmp
+../tactiletoneplugin/group/tactiletoneplugin.mmp
+../tactilevibraplugin/group/tactilevibraplugin.mmp
+../tactileaudioplugin/group/tactileaudioplugin.mmp

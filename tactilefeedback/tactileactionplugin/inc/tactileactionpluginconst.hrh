@@ -1,0 +1,28 @@
+/*
+* Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Contains plugin's UID from mmp- and rss-files.
+* Part of:      Tactile Feedback.
+*
+*/
+
+
+
+#ifndef TACTILEACTIONPLUGINCONST_HRH
+#define TACTILEACTIONPLUGINCONST_HRH
+
+// UIDs for Tactile Action Plugin DLL and ECom implementation
+#define KTactileActionPluginDllUid 0x2000B495
+#define KTactileActionPluginImplementationUid 0x2000B496
+
+#endif // TACTILEACTIONPLUGINCONST_HRH

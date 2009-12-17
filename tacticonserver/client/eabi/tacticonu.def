@@ -1,0 +1,10 @@
+EXPORTS
+	_ZN9RTacticon12PlayTacticonE13TTacticonType @ 1 NONAME
+	_ZN9RTacticon12StopTacticonEv @ 2 NONAME
+	_ZN9RTacticon5CloseEv @ 3 NONAME
+	_ZN9RTacticon7ConnectEv @ 4 NONAME
+	_ZN9RTacticonC1Ev @ 5 NONAME
+	_ZN9RTacticonC2Ev @ 6 NONAME
+	_ZN9RTacticon15EnableTacticonsEi @ 7 NONAME
+	_ZN9RTacticon16TacticonsEnabledEv @ 8 NONAME
+

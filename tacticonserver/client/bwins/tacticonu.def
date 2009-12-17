@@ -1,0 +1,9 @@
+EXPORTS
+	??0RTacticon@@QAE@XZ @ 1 NONAME ; RTacticon::RTacticon(void)
+	?Close@RTacticon@@QAEXXZ @ 2 NONAME ; void RTacticon::Close(void)
+	?Connect@RTacticon@@QAEHXZ @ 3 NONAME ; int RTacticon::Connect(void)
+	?PlayTacticon@RTacticon@@QAEXW4TTacticonType@@@Z @ 4 NONAME ; void RTacticon::PlayTacticon(enum TTacticonType)
+	?StopTacticon@RTacticon@@QAEXXZ @ 5 NONAME ; void RTacticon::StopTacticon(void)
+	?EnableTacticons@RTacticon@@QAEHH@Z @ 6 NONAME ; int RTacticon::EnableTacticons(int)
+	?TacticonsEnabled@RTacticon@@QAEHXZ @ 7 NONAME ; int RTacticon::TacticonsEnabled(void)
+

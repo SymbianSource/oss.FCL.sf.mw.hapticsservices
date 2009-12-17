@@ -1,0 +1,30 @@
+<model>
+  <id>536917140</id>
+  <name>tactilefeedbackresolver</name>
+  <group>
+    <id>64</id>
+    <name>TACTILE_PERFORMANCE</name>
+    <trace>
+      <text>e_TACTILE_RESOLVER_PLAY_FEEDBACK 1</text>
+      <id>1</id>
+      <name>TACTILE_RESOLVER_PLAY_FEEDBACK_1</name>
+      <location>
+        <file>../src/tactilefeedbackresolver.cpp</file>
+        <line>158</line>
+        <class>CTactileFeedbackResolver</class>
+        <function>PlayFeedback</function>
+      </location>
+    </trace>
+    <trace>
+      <text>e_TACTILE_RESOLVER_PLAY_FEEDBACK 0</text>
+      <id>2</id>
+      <name>TACTILE_RESOLVER_PLAY_FEEDBACK_0</name>
+      <location>
+        <file>../src/tactilefeedbackresolver.cpp</file>
+        <line>183</line>
+        <class>CTactileFeedbackResolver</class>
+        <function>PlayFeedback</function>
+      </location>
+    </trace>
+  </group>
+</model>
