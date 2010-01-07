@@ -37,7 +37,7 @@ USERINCLUDE             ../../../../inc
 USERINCLUDE             ../traces
 
 // Default system include paths for middleware layer modules.
-MW_LAYER_SYSTEMINCLUDE
+APP_LAYER_SYSTEMINCLUDE
 
 SOURCEPATH              ../data
 START RESOURCE          2001CB9C.rss
