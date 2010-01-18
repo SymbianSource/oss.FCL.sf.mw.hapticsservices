@@ -171,7 +171,7 @@ void CTactileClickPlugin::OtherEvent( TInt aType, TAny* aParam )
             }
         }
     // 2. Window group open events    
-    else if ( aType == EEventGroupWindowOpen && iAreaRegistry )
+    else if ( aParam && aType == EEventGroupWindowOpen && iAreaRegistry )
         {
         TGroupWindowOpenData* data = static_cast<TGroupWindowOpenData*>( aParam );
         
