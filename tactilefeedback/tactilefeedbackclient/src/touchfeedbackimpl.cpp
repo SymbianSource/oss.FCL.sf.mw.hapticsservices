@@ -973,7 +973,7 @@ void CTouchFeedbackImpl::StartFeedback( const CCoeControl* aControl,
             
         if ( vibraEnabled || audioEnabled )
             {
-            TRACE4("CTouchFeedbackImpl::StartFeedback, type:=%d intensity:%d, timeout:%d", aType, aIntensity, aTimeout);
+            TRACE4("CTouchFeedbackImpl::StartFeedback, type:=%d intensity:%d, timeout:%d", aType, aIntensity, aTimeout.Int());
             TUint32 clientHandle = ClientHandle( aControl );
             iClient->StartFeedback( clientHandle, 
                                     aType, 
