@@ -108,6 +108,10 @@ void CTouchFeedbackClient::ConstructL()
         {
         User::LeaveIfError( iChunk.OpenGlobal( data.iChunkName, EFalse ) );
         }
+    else if( err != KErrNone )
+        {
+        User::LeaveIfError( err );
+        }
     
     // #3 Set window count to zero
     TInt* chunkPtr = reinterpret_cast<TInt*>( iChunk.Base() );
@@ -120,6 +124,10 @@ void CTouchFeedbackClient::ConstructL()
     if ( err == KErrAlreadyExists )
         {
         User::LeaveIfError( iSemaphore.OpenGlobal( KTouchFeedbackSemaphore ) );
+        }
+    else if( err != KErrNone )
+        {
+        User::LeaveIfError( err );
         }
        
     // #5 Send chunk name to window server
