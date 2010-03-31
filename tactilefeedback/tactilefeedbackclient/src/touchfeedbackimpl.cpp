@@ -19,7 +19,7 @@
 #include <eikenv.h>
 #include <coecntrl.h>
 #include <featmgr.h>
-#include <aknutils.h> 
+#include <AknUtils.h> 
 #include <tactilefeedbacktrace.h>
 #include <touchfeedbackspec.h>
 

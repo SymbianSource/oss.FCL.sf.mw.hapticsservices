@@ -18,8 +18,8 @@
 
 #include <ecom/implementationproxy.h>
 #include <centralrepository.h>
-#include <audiopreference.h>
-#include <profileinternal.hrh>
+#include <AudioPreference.h>
+#include <ProfileInternal.hrh>
 #include <MProfileEngine.h>
 #include <MProfile.h>
 #include <MProfileExtraSettings.h>

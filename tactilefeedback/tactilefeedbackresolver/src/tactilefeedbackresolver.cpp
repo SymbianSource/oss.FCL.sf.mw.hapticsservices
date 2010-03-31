@@ -47,7 +47,8 @@ _LIT_SECURITY_POLICY_C1(   KTactileWritePolicy, ECapabilityWriteDeviceData );
 // ---------------------------------------------------------------------------
 //
 CTactileFeedbackResolver::CTactileFeedbackResolver() : 
-    iFeedbackStarted( EFalse )
+    iFeedbackStarted( EFalse ), 
+    iLastFeedback( ETouchFeedbackNone ) 
     {
     }
 
@@ -107,7 +108,17 @@ CTactileFeedbackResolver::~CTactileFeedbackResolver()
     delete iAudioPlayer;
     REComSession::FinalClose();
     }
-    
+
+TBool CTactileFeedbackResolver::IsHigherThanPlaying(
+    TTouchLogicalFeedback aFeedback ) const
+    {
+    return ( aFeedback == ETouchFeedbackPopUp || 
+             aFeedback == ETouchFeedbackIncreasingPopUp || 
+             aFeedback == ETouchFeedbackDecreasingPopUp ) &&
+           ( iLastFeedback == ETouchFeedbackBasicButton ||
+             iLastFeedback == ETouchFeedbackList );
+    }
+
 // ---------------------------------------------------------------------------
 // We play feedback in case all three conditions are met:
 // 
@@ -129,17 +140,32 @@ void CTactileFeedbackResolver::PlayFeedback(
     
     TTimeIntervalMicroSeconds interval = 
         now.MicroSecondsFrom( iLastFeedbackTimeStamp );
+
+    TBool willPlay = EFalse;
     
-     if ( iMinimumInterval == TTimeIntervalMicroSeconds( 0 ) || 
-          now < iLastFeedbackTimeStamp ||                       
-          iMinimumInterval <= interval )                        
+    if ( iMinimumInterval == TTimeIntervalMicroSeconds( 0 ) || 
+         now < iLastFeedbackTimeStamp ||                       
+         iMinimumInterval <= interval )
+        {
+        willPlay = ETrue;
+        }
+    else if ( IsHigherThanPlaying( aFeedback ) )
+        {
+        willPlay = ETrue;
+        
+        iAudioPlayer->StopFeedback();
+        iHapticsPlayer->StopFeedback();
+        }
+
+    if ( willPlay )
         {
         // First store the timestamp of this feedback playing moment.
         // This really needs to be done when 
         // actually playing feedback (not when feedback was requested
         // but filtered out).
         iLastFeedbackTimeStamp = now;      
-    
+
+        iLastFeedback = aFeedback;
     
         // Force vibra- and audio feedback off if those are globally disabled
         if ( !iVibraEnabled )

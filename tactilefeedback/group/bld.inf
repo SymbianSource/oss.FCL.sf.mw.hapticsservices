@@ -23,10 +23,10 @@ PRJ_EXPORTS
 
 #ifndef TOOLS
 
-#include "../TactileAreaRegistry/group/bld.inf"
-#include "../TactileFeedbackResolver/group/bld.inf"
-#include "../TactileClickPlugin/group/bld.inf"
-#include "../TactileFeedbackClient/group/bld.inf"
-#include "../TactileActionPlugin/group/bld.inf"
+#include "../tactilearearegistry/group/bld.inf"
+#include "../tactilefeedbackresolver/group/bld.inf"
+#include "../tactileclickplugin/group/bld.inf"
+#include "../tactilefeedbackclient/group/bld.inf"
+#include "../tactileactionplugin/group/bld.inf"
 
 #endif // TOOLS

@@ -22,7 +22,7 @@
 #include <centralrepository.h>
 #include <ecom/implementationproxy.h>
 
-#include <audiopreference.h>
+#include <AudioPreference.h>
 #include <mda/common/audio.h>
 #include <mdaaudiooutputstream.h>
 

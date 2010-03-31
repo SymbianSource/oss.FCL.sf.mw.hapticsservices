@@ -20,7 +20,7 @@
 #include <hwrmvibra.h>
 #include <centralrepository.h>
 #include <ecom/implementationproxy.h>
-#include <profileinternal.hrh>
+#include <ProfileInternal.hrh>
 
 #include "tactilefeedbackprivatecrkeys.h"
 #include "tactilefeedbacktrace.h"

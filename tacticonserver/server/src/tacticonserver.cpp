@@ -24,9 +24,9 @@
 #include "tacticondefs.h"
 #include "tacticonshutdown.h"
 #include "tacticontrace.h"
-#include "osttracedefinitions.h" 
+#include "OstTraceDefinitions.h" 
 #ifdef OST_TRACE_COMPILER_IN_USE 
-#include "tacticonservertraces.h"
+#include "tacticonserverTraces.h"
 #endif
 
 // --------------------------------------------------------------------------

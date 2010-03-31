@@ -23,9 +23,9 @@
 #include "tacticonhapticsplayer.h"
 #include "tacticonprivatecrkeys.h"
 #include "tacticontrace.h"
-#include "osttracedefinitions.h" 
+#include "OstTraceDefinitions.h" 
 #ifdef OST_TRACE_COMPILER_IN_USE 
-#include "tacticonhapticsplayertraces.h"
+#include "tacticonhapticsplayerTraces.h"
 #endif
 
 
