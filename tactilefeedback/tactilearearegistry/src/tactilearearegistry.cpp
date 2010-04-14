@@ -158,6 +158,8 @@ EXPORT_C void CTactileAreaRegistry::HandleDisconnect(
     const TTactileFeedbackDisconnectData& aData )
     {
     // #1
+    iTactileSemaphore.Wait();
+    
     for ( TInt i=0; i < iChunkArray.Count(); i++ )
         {
         if ( iChunkArray[i].iWindowGroupId == aData.iWindowGroupId )
@@ -170,6 +172,7 @@ EXPORT_C void CTactileAreaRegistry::HandleDisconnect(
             break;
             }
         }  
+    iTactileSemaphore.Signal();
     }
     
 

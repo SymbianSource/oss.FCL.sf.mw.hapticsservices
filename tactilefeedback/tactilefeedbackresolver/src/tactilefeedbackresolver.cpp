@@ -114,8 +114,14 @@ TBool CTactileFeedbackResolver::IsHigherThanPlaying(
     {
     return ( aFeedback == ETouchFeedbackPopUp || 
              aFeedback == ETouchFeedbackIncreasingPopUp || 
-             aFeedback == ETouchFeedbackDecreasingPopUp ) &&
+             aFeedback == ETouchFeedbackDecreasingPopUp ||
+             aFeedback == ETouchFeedbackBoundaryList ||
+             aFeedback == ETouchFeedbackOptionsMenuOpened ||
+             aFeedback == ETouchFeedbackOptionsMenuClosed ||
+             aFeedback == ETouchFeedbackSubMenuOpened ||
+             aFeedback == ETouchFeedbackSubMenuClosed ) &&
            ( iLastFeedback == ETouchFeedbackBasicButton ||
+             iLastFeedback == ETouchFeedbackSensitiveList ||
              iLastFeedback == ETouchFeedbackList );
     }
 

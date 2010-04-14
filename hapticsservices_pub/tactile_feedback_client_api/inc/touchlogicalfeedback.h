@@ -88,6 +88,12 @@ enum TTouchLogicalFeedback
     ETouchFeedbackCheckbox,
     ETouchFeedbackSensitiveInput,
     ETouchFeedbackCharacterInputButton,
+    ETouchFeedbackOptionsMenuOpened,
+    ETouchFeedbackOptionsMenuClosed,
+    ETouchFeedbackSubMenuOpened,
+    ETouchFeedbackSubMenuClosed,
+    ETouchFeedbackLongTap,
+    ETouchFeedbackDynamicSlider,
     ETouchFeedbackMultiTouchRecognized
     };
     
