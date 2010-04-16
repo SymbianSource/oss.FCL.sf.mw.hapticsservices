@@ -20,7 +20,7 @@
 #include <hwrmvibra.h>
 #include <centralrepository.h>
 #include <ecom/implementationproxy.h>
-#include <profileinternal.hrh>
+#include <ProfileInternal.hrh>
 
 #include "tactilefeedbackprivatecrkeys.h"
 #include "tactilefeedbacktrace.h"
@@ -114,28 +114,26 @@ TInt CTactileVibraPlayer::PlayFeedback( TTouchLogicalFeedback aFeedback )
             {
             case ETouchFeedbackBasic:               // flow through
             case ETouchFeedbackBasicButton:         // flow through
-            case ETouchFeedbackList:                // flow through
-            case ETouchFeedbackBoundaryList:        // flow through
-            case ETouchFeedbackSlider:              // flow through
-            case ETouchFeedbackEdit:                // flow through
-            case ETouchFeedbackSensitiveInput:
+            case ETouchFeedbackBasicItem:           // flow through
+            case ETouchFeedbackBounceEffect:        // flow through
+            case ETouchFeedbackBasicSlider:         // flow through
+            case ETouchFeedbackEditor:              // flow through
+            case ETouchFeedbackSensitiveKeypad:
             case ETouchFeedbackLineSelection:       // flow through
             case ETouchFeedbackBlankSelection:      // flow through
             case ETouchFeedbackTextSelection:       // flow through
             case ETouchFeedbackEmptyLineSelection:  // flow through
-            case ETouchFeedbackTab:                 // flow through
             case ETouchFeedbackPopUp:               // flow through
-            case ETouchFeedbackIncreasingPopUp:     // flow through
-            case ETouchFeedbackDecreasingPopUp:     // flow through
-            case ETouchFeedbackFlick:               // flow through
+            case ETouchFeedbackPopupOpen:           // flow through
+            case ETouchFeedbackPopupClose:          // flow through
+            case ETouchFeedbackItemScroll:          // flow through
             case ETouchFeedbackCheckbox:            // flow through
-            case ETouchFeedbackCharacterInputButton:
-            case ETouchFeedbackMultiTouchRecognized:
+            case ETouchFeedbackMultitouchActivate:
                 effectIndex = 0;
                 break;
             case ETouchFeedbackSensitive:           // flow through
             case ETouchFeedbackSensitiveButton:     // flow through
-            case ETouchFeedbackSensitiveList:      
+            case ETouchFeedbackSensitiveItem:      
                 effectIndex = 1;                    
                 break;                              
             default:                                

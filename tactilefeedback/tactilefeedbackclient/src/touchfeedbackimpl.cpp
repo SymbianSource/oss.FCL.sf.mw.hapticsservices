@@ -19,7 +19,7 @@
 #include <eikenv.h>
 #include <coecntrl.h>
 #include <featmgr.h>
-#include <aknutils.h> 
+#include <AknUtils.h> 
 #include <tactilefeedbacktrace.h>
 #include <touchfeedbackspec.h>
 
@@ -1732,7 +1732,7 @@ EXPORT_C TInt CFeedbackSpec::AddFeedback( TTouchEventType aEventType,
 	// range check. update when logical feedback types are changed.
     if (! ( aFeedback >= ETouchFeedbackNone || aFeedback <= ETouchFeedbackSensitive) 
      || ! ( aFeedback >= ETouchFeedbackBasicButton || 
-            aFeedback <= ETouchFeedbackMultiTouchRecognized ) )
+            aFeedback <= ETouchFeedbackStopFlick ) )
         {
         return KErrArgument;
         }

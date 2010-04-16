@@ -19,7 +19,7 @@
 #include <featmgr.h>
 #include "tacticontrace.h"
 #include "tacticondefs.h"
-#include "osttracedefinitions.h" 
+#include "OstTraceDefinitions.h" 
 #ifdef OST_TRACE_COMPILER_IN_USE 
 #include "tacticonTraces.h"
 #endif
