@@ -158,9 +158,14 @@ void CTactileFeedbackResolver::PlayFeedback(
     else if ( IsHigherThanPlaying( aFeedback ) )
         {
         willPlay = ETrue;
-        
-        iAudioPlayer->StopFeedback();
-        iHapticsPlayer->StopFeedback();
+        if( iAudioPlayer )
+            {
+            iAudioPlayer->StopFeedback();
+            }
+        if( iHapticsPlayer )
+            {
+            iHapticsPlayer->StopFeedback();
+            }
         }
 
     if ( willPlay )
