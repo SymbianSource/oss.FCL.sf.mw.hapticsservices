@@ -63,7 +63,7 @@ _LIT8( KTFCheckbox,             "TFCheckbox");
 _LIT8( KTFBasicKeypad,          "TFBasic");                 // To be released in IVT file version 10.1
 _LIT8( KTFSensitiveKeypad,      "TFSensitiveInput");        // Mapped to IVT file version 9.2
 _LIT8( KTFMultitouchActivate,   "TFMultiTouchRecognized");  // Mapped to IVT file version 9.2
-_LIT8( KTFFlicked,              "TFBasic");                 // To be released in IVT file version 10.1
+_LIT8( KTFFlick,                "TFBasic");                 // To be released in IVT file version 10.1
 _LIT8( KTFItemDrop,             "TFBasic");                 // To be released in IVT file version 10.1
 _LIT8( KTFItemMoveOver,         "TFBasic");                 // To be released in IVT file version 10.1
 _LIT8( KTFItemPick,             "TFBasic");                 // To be released in IVT file version 10.1
@@ -71,6 +71,7 @@ _LIT8( KTFMultipleCheckbox,     "TFBasic");                 // To be released in
 _LIT8( KTFRotateStep,           "TFBasic");                 // To be released in IVT file version 10.1
 _LIT8( KTFSensitiveSlider,      "TFBasic");                 // To be released in IVT file version 10.1       
 _LIT8( KTFStopFlick,            "TFBasic");                 // To be released in IVT file version 10.1
+_LIT8( KTFLongPress,            "TFBasic");                 // To be released in IVT file version 10.1
 
 // Continuous feedback's names
 _LIT8( KTFContinuousSmooth,     "TFContinuousSmooth");
@@ -273,8 +274,8 @@ void CTactileHapticsPlayer::DoPlayFeedbackL( TTouchLogicalFeedback aFeedback )
         case ETouchFeedbackMultitouchActivate:
             name = KTFMultitouchActivate;
             break;
-        case ETouchFeedbackFlicked:
-            name = KTFFlicked;
+        case ETouchFeedbackFlick:
+            name = KTFFlick;
             break;
         case ETouchFeedbackItemDrop:
             name = KTFItemDrop;
@@ -293,6 +294,9 @@ void CTactileHapticsPlayer::DoPlayFeedbackL( TTouchLogicalFeedback aFeedback )
             break;
         case ETouchFeedbackStopFlick:
             name = KTFStopFlick;
+            break;
+        case ETouchFeedbackLongPress:
+            name = KTFLongPress;
             break;
         default:
             User::Leave( KErrArgument );

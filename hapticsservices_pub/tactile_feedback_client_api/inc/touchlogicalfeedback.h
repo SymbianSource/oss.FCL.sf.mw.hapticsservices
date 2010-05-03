@@ -89,14 +89,15 @@ enum TTouchLogicalFeedback
     ETouchFeedbackMultitouchActivate,
     // New types for 10.1:
     ETouchFeedbackBasicKeypad,
-    ETouchFeedbackFlicked,
+    ETouchFeedbackFlick,
     ETouchFeedbackItemDrop,
     ETouchFeedbackItemMoveOver,
     ETouchFeedbackItemPick,
     ETouchFeedbackMultipleCheckbox,
     ETouchFeedbackRotateStep,
     ETouchFeedbackSensitiveSlider,
-    ETouchFeedbackStopFlick
+    ETouchFeedbackStopFlick,
+    ETouchFeedbackLongPress
     };
     
 /**  

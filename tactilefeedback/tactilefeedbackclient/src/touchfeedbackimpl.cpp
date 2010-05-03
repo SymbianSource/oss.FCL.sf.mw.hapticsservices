@@ -1732,7 +1732,7 @@ EXPORT_C TInt CFeedbackSpec::AddFeedback( TTouchEventType aEventType,
 	// range check. update when logical feedback types are changed.
     if (! ( aFeedback >= ETouchFeedbackNone || aFeedback <= ETouchFeedbackSensitive) 
      || ! ( aFeedback >= ETouchFeedbackBasicButton || 
-            aFeedback <= ETouchFeedbackStopFlick ) )
+            aFeedback <= ETouchFeedbackLongPress ) )
         {
         return KErrArgument;
         }
