@@ -112,17 +112,31 @@ CTactileFeedbackResolver::~CTactileFeedbackResolver()
 TBool CTactileFeedbackResolver::IsHigherThanPlaying(
     TTouchLogicalFeedback aFeedback ) const
     {
-    return ( aFeedback == ETouchFeedbackPopUp || 
-             aFeedback == ETouchFeedbackIncreasingPopUp || 
-             aFeedback == ETouchFeedbackDecreasingPopUp ||
-             aFeedback == ETouchFeedbackBoundaryList ||
-             aFeedback == ETouchFeedbackOptionsMenuOpened ||
-             aFeedback == ETouchFeedbackOptionsMenuClosed ||
-             aFeedback == ETouchFeedbackSubMenuOpened ||
-             aFeedback == ETouchFeedbackSubMenuClosed ) &&
-           ( iLastFeedback == ETouchFeedbackBasicButton ||
-             iLastFeedback == ETouchFeedbackSensitiveList ||
-             iLastFeedback == ETouchFeedbackList );
+    if( aFeedback == ETouchFeedbackList &&
+        iLastFeedback == ETouchFeedbackSensitiveList )
+        {
+        return ETrue;
+        }
+    
+    return ( ( aFeedback == ETouchFeedbackPopUp || 
+            aFeedback == ETouchFeedbackIncreasingPopUp || 
+            aFeedback == ETouchFeedbackDecreasingPopUp ||
+            aFeedback == ETouchFeedbackBoundaryList ||
+            aFeedback == ETouchFeedbackOptionsMenuOpened ||
+            aFeedback == ETouchFeedbackOptionsMenuClosed ||
+            aFeedback == ETouchFeedbackSubMenuOpened ||
+            aFeedback == ETouchFeedbackSubMenuClosed ) &&
+            ( iLastFeedback == ETouchFeedbackBasicButton ||
+            iLastFeedback == ETouchFeedbackSensitiveButton ||
+            iLastFeedback == ETouchFeedbackSensitiveList ||
+            iLastFeedback == ETouchFeedbackList ||
+            iLastFeedback == ETouchFeedbackCheckbox ) ) 
+            || (
+             aFeedback == ETouchFeedbackPopUp && 
+             (iLastFeedback == ETouchFeedbackIncreasingPopUp ||
+              iLastFeedback == ETouchFeedbackOptionsMenuOpened ||
+              iLastFeedback == ETouchFeedbackSubMenuOpened)
+             );
     }
 
 // ---------------------------------------------------------------------------
@@ -158,14 +172,6 @@ void CTactileFeedbackResolver::PlayFeedback(
     else if ( IsHigherThanPlaying( aFeedback ) )
         {
         willPlay = ETrue;
-        if( iAudioPlayer )
-            {
-            iAudioPlayer->StopFeedback();
-            }
-        if( iHapticsPlayer )
-            {
-            iHapticsPlayer->StopFeedback();
-            }
         }
 
     if ( willPlay )

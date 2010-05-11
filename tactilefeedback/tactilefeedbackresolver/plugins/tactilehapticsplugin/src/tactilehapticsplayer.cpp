@@ -68,7 +68,6 @@ _LIT8( KTFOptionsMenuClosed,    "TFOptionsMenuClosed");
 _LIT8( KTFSubMenuOpened,        "TFSubMenuOpened");
 _LIT8( KTFSubMenuClosed,        "TFSubMenuClosed");
 _LIT8( KTFLongTap,              "TFLongTap");
-_LIT8( KTFDynamicSlider,        "TFDynamicSlider");
 _LIT8( KTFMultiTouchRecognized, "TFMultiTouchRecognized");
 
 // Continuous feedback's names
@@ -76,6 +75,7 @@ _LIT8( KTFContinuousSmooth,     "TFContinuousSmooth");
 _LIT8( KTFContinuousSlider,     "TFContinuousSlider");
 _LIT8( KTFContinuousInput,      "TFContinuousInput");
 _LIT8( KTFContinuousFlick,      "TFContinuousFlick");
+_LIT8( KTFDynamicSlider,        "TFDynamicSlider");
 // ---------------------------------------------------------------------------
 // Constructor.
 // ---------------------------------------------------------------------------
@@ -121,7 +121,7 @@ void CTactileHapticsPlayer::ConstructL()
     // profiles engine
     InitializeProfilesEngineL();
     
-    if ( iVibraLevel > EProfileAudioFeedbackLevel3 )
+    if ( iVibraLevel > EProfileTactileFeedbackLevel3 )
         {
         User::Leave( KErrGeneral );
         }
@@ -298,9 +298,6 @@ void CTactileHapticsPlayer::DoPlayFeedbackL( TTouchLogicalFeedback aFeedback )
         case ETouchFeedbackLongTap:
             name = KTFLongTap;
             break;
-        case ETouchFeedbackDynamicSlider:
-            name = KTFDynamicSlider;
-            break;
         case ETouchFeedbackMultiTouchRecognized:
             name = KTFMultiTouchRecognized;
             break;
@@ -404,6 +401,9 @@ TInt CTactileHapticsPlayer::StartFeedback( TTouchContinuousFeedback aFeedback,
         case ETouchContinuousFlick:
             name = KTFContinuousFlick;
             break;    
+        case ETouchDynamicSlider:
+            name = KTFDynamicSlider;
+            break;
         default:
             ret = KErrArgument;
             break;

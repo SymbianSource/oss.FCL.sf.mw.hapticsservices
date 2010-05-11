@@ -93,7 +93,6 @@ enum TTouchLogicalFeedback
     ETouchFeedbackSubMenuOpened,
     ETouchFeedbackSubMenuClosed,
     ETouchFeedbackLongTap,
-    ETouchFeedbackDynamicSlider,
     ETouchFeedbackMultiTouchRecognized
     };
     
@@ -106,7 +105,8 @@ enum TTouchContinuousFeedback
     ETouchContinuousSmooth = 0x300, // For generic continuous feedback for custom controls
     ETouchContinuousSlider,
     ETouchContinuousInput,
-    ETouchContinuousFlick
+    ETouchContinuousFlick,
+    ETouchDynamicSlider
     };
     
 /**  

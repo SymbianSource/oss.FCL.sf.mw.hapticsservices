@@ -143,7 +143,6 @@ TInt CTactileTonePlayer::PlayFeedback( TTouchLogicalFeedback aFeedback )
             case ETouchFeedbackBoundaryList:        // flow through
             case ETouchFeedbackSlider:              // flow through
             case ETouchFeedbackEdit:                // flow through
-            case ETouchFeedbackSensitiveInput:
             case ETouchFeedbackLineSelection:       // flow through
             case ETouchFeedbackBlankSelection:      // flow through
             case ETouchFeedbackTextSelection:       // flow through
@@ -160,13 +159,13 @@ TInt CTactileTonePlayer::PlayFeedback( TTouchLogicalFeedback aFeedback )
             case ETouchFeedbackSubMenuOpened:
             case ETouchFeedbackSubMenuClosed:
             case ETouchFeedbackLongTap:
-            case ETouchFeedbackDynamicSlider:
             case ETouchFeedbackMultiTouchRecognized:
                 effectIndex = 0;
                 break;
             case ETouchFeedbackSensitive:           // flow through
             case ETouchFeedbackSensitiveButton:     // flow through
             case ETouchFeedbackSensitiveList:      
+            case ETouchFeedbackSensitiveInput:
                 effectIndex = 1;                    
                 break;                              
             default:                                
