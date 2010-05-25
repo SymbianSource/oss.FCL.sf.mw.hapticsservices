@@ -58,9 +58,13 @@ const TUint32 KTactileFeedbackAudioVolume           = 0x00000014;
 * Possible values are:
 * Valid path to IVT file. 
 *
-* Default value: "z:\\private\\10003B20\\tactilefeedbackeffects.ivt"
+* Default value: "z:\\private\\10003B20\\10.1_TactileFeedbackLevel*_A.ivt"
 **/
-const TUint32 KTactileHapticsIVTFile                = 0x00000015;
+const TUint32 KTactileHapticsLevel1IVTFile          = 0x00000015;
+const TUint32 KTactileHapticsLevel2IVTFile          = 0x00000016;
+const TUint32 KTactileHapticsLevel3IVTFile          = 0x00000017;
+const TUint32 KTactileHapticsLevel4IVTFile          = 0x00000018;
+const TUint32 KTactileHapticsLevel5IVTFile          = 0x00000019;
 
 /**
 * Number of steps used to adjust vibra feedback strength
@@ -70,7 +74,7 @@ const TUint32 KTactileHapticsIVTFile                = 0x00000015;
 *
 * Default value: 10
 **/
-const TUint32 KTactileFeedbackVibraLevels           = 0x00000016;
+const TUint32 KTactileFeedbackVibraLevels           = 0x0000001a;
 
 /**
 * Number of steps used to adjust audio feedback volume
@@ -80,7 +84,7 @@ const TUint32 KTactileFeedbackVibraLevels           = 0x00000016;
 *
 * Default value: 3
 **/
-const TUint32 KTactileFeedbackAudioLevels           = 0x00000017;
+const TUint32 KTactileFeedbackAudioLevels           = 0x0000001b;
 
 #endif  // TACTILEFEEDBACKDOMAINCRKEYS_H
 

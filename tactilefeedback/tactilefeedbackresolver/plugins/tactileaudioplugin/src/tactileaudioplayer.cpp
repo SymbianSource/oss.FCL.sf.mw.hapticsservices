@@ -138,7 +138,6 @@ TInt CTactileAudioPlayer::PlayFeedback( TTouchLogicalFeedback aFeedback )
         case ETouchFeedbackBounceEffect:        // flow through
         case ETouchFeedbackBasicSlider:         // flow through
         case ETouchFeedbackEditor:              // flow through
-        case ETouchFeedbackSensitiveKeypad:
         case ETouchFeedbackLineSelection:       // flow through
         case ETouchFeedbackBlankSelection:      // flow through
         case ETouchFeedbackTextSelection:       // flow through
@@ -149,11 +148,26 @@ TInt CTactileAudioPlayer::PlayFeedback( TTouchLogicalFeedback aFeedback )
         case ETouchFeedbackItemScroll:          // flow through
         case ETouchFeedbackCheckbox:            // flow through
         case ETouchFeedbackMultitouchActivate:
+        case ETouchFeedbackBasicKeypad:
+        case ETouchFeedbackFlick:
+        case ETouchFeedbackItemDrop:
+        case ETouchFeedbackItemMoveOver:
+        case ETouchFeedbackItemPick:
+        case ETouchFeedbackMultipleCheckbox:
+        case ETouchFeedbackRotateStep:
+        case ETouchFeedbackStopFlick:
+        case ETouchFeedbackLongTap:
+        case ETouchFeedbackSubMenuOpen:
+        case ETouchFeedbackSubMenuClosed:
+        case ETouchFeedbackOptionsMenuOpen:
+        case ETouchFeedbackOptionsMenuClosed:
             volumeIndex = 0;
             break;
         case ETouchFeedbackSensitive:           // flow through
         case ETouchFeedbackSensitiveButton:     // flow through
         case ETouchFeedbackSensitiveItem:      
+        case ETouchFeedbackSensitiveKeypad:
+        case ETouchFeedbackSensitiveSlider:
             volumeIndex = 1;
             break;
         default:

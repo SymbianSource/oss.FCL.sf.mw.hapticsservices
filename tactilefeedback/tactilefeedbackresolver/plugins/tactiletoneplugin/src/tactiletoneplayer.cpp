@@ -67,7 +67,7 @@ void CTactileTonePlayer::ConstructL()
     // settings from profiles engine
     InitializeProfilesEngineL();
                                          
-    if ( iAudioLevel > EProfileAudioFeedbackLevel3 )
+    if ( iAudioLevel > EProfileAudioFeedbackLevel5 )
         {
         User::Leave( KErrGeneral );
         }
@@ -143,7 +143,6 @@ TInt CTactileTonePlayer::PlayFeedback( TTouchLogicalFeedback aFeedback )
             case ETouchFeedbackBounceEffect:        // flow through
             case ETouchFeedbackBasicSlider:         // flow through
             case ETouchFeedbackEditor:              // flow through
-            case ETouchFeedbackSensitiveKeypad:
             case ETouchFeedbackLineSelection:       // flow through
             case ETouchFeedbackBlankSelection:      // flow through
             case ETouchFeedbackTextSelection:       // flow through
@@ -154,11 +153,26 @@ TInt CTactileTonePlayer::PlayFeedback( TTouchLogicalFeedback aFeedback )
             case ETouchFeedbackItemScroll:          // flow through
             case ETouchFeedbackCheckbox:            // flow through
             case ETouchFeedbackMultitouchActivate:
+            case ETouchFeedbackBasicKeypad:
+            case ETouchFeedbackFlick:
+            case ETouchFeedbackItemDrop:
+            case ETouchFeedbackItemMoveOver:
+            case ETouchFeedbackItemPick:
+            case ETouchFeedbackMultipleCheckbox:
+            case ETouchFeedbackRotateStep:
+            case ETouchFeedbackStopFlick:
+            case ETouchFeedbackLongTap:
+            case ETouchFeedbackSubMenuOpen:
+            case ETouchFeedbackSubMenuClosed:
+            case ETouchFeedbackOptionsMenuOpen:
+            case ETouchFeedbackOptionsMenuClosed:
                 effectIndex = 0;
                 break;
             case ETouchFeedbackSensitive:           // flow through
             case ETouchFeedbackSensitiveButton:     // flow through
             case ETouchFeedbackSensitiveItem:      
+            case ETouchFeedbackSensitiveKeypad:
+            case ETouchFeedbackSensitiveSlider:
                 effectIndex = 1;                    
                 break;                              
             default:                                
@@ -210,7 +224,7 @@ TInt CTactileTonePlayer::PlayPreviewFeedback( TInt aLevel,
     TInt ret( KErrArgument );
     
     if ( aLevel > EProfileAudioFeedbackOff  &&
-         aLevel <= EProfileAudioFeedbackLevel3 )
+         aLevel <= EProfileAudioFeedbackLevel5 )
         {
         iOriginalLevel = iAudioLevel;
         iAudioLevel = aLevel;
@@ -354,6 +368,42 @@ void CTactileTonePlayer::ReadSettings()
                          sensitiveDuration );
         iRepository.Get( KTactileAudioToneVolumeSensitiveLevel3,  
                          sensitiveParams.iVolume );        
+        }
+    else if ( iAudioLevel == EProfileAudioFeedbackLevel4  )
+        {
+        // Read settings for ETouchFeedbackBasic, level 4
+        iRepository.Get( KTactileAudioToneFreqBasicLevel4,     
+                         basicParams.iFrequency );
+        iRepository.Get( KTactileAudioToneDurationBasicLevel4, 
+                         basicDuration );
+        iRepository.Get( KTactileAudioToneVolumeBasicLevel4,   
+                         basicParams.iVolume );
+        
+        // Read settings for ETouchFeedbackSensitive, level 4
+        iRepository.Get( KTactileAudioToneFreqSensitiveLevel4, 
+                         sensitiveParams.iFrequency );
+        iRepository.Get( KTactileAudioToneDurationSensitiveLevel4,  
+                         sensitiveDuration );
+        iRepository.Get( KTactileAudioToneVolumeSensitiveLevel4,  
+                         sensitiveParams.iVolume );
+        }
+    else if ( iAudioLevel == EProfileAudioFeedbackLevel5  )
+        {
+        // Read settings for ETouchFeedbackBasic, level 5
+        iRepository.Get( KTactileAudioToneFreqBasicLevel5,     
+                         basicParams.iFrequency );
+        iRepository.Get( KTactileAudioToneDurationBasicLevel5, 
+                         basicDuration );
+        iRepository.Get( KTactileAudioToneVolumeBasicLevel5,   
+                         basicParams.iVolume );
+        
+        // Read settings for ETouchFeedbackSensitive, level 5
+        iRepository.Get( KTactileAudioToneFreqSensitiveLevel5, 
+                         sensitiveParams.iFrequency );
+        iRepository.Get( KTactileAudioToneDurationSensitiveLevel5,  
+                         sensitiveDuration );
+        iRepository.Get( KTactileAudioToneVolumeSensitiveLevel5,  
+                         sensitiveParams.iVolume );
         }
      
     // Clear old parameters. Only do it at end, so that we still have the
