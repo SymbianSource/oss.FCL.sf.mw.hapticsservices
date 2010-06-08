@@ -23,6 +23,7 @@
 
 #include <centralrepository.h>
 #include <ecom/implementationinformation.h>
+#include <ProfileEngineInternalCRKeys.h>
 
 #include "tactilefeedbackprivatecrkeys.h"
 #include "tactilefeedbackinternalpskeys.h"
@@ -103,6 +104,7 @@ CTactileFeedbackResolver::~CTactileFeedbackResolver()
     {
     delete iCenRepNotifier;
     delete iRepository;
+    delete iProfileRepository;
     delete iPropertyWatcher;
     delete iHapticsPlayer;
     delete iAudioPlayer;
@@ -118,25 +120,15 @@ TBool CTactileFeedbackResolver::IsHigherThanPlaying(
         return ETrue;
         }
     
-    return ( ( aFeedback == ETouchFeedbackPopUp || 
+    return ( aFeedback == ETouchFeedbackPopUp || 
             aFeedback == ETouchFeedbackPopupOpen || 
             aFeedback == ETouchFeedbackPopupClose ||
-            aFeedback == ETouchFeedbackBounceEffect ||
-            aFeedback == ETouchFeedbackOptionsMenuOpen ||
-            aFeedback == ETouchFeedbackOptionsMenuClosed ||
-            aFeedback == ETouchFeedbackSubMenuOpen ||
-            aFeedback == ETouchFeedbackSubMenuClosed ) &&
+            aFeedback == ETouchFeedbackBounceEffect ) &&
             ( iLastFeedback == ETouchFeedbackBasicButton ||
             iLastFeedback == ETouchFeedbackSensitiveButton ||
             iLastFeedback == ETouchFeedbackSensitiveItem ||
             iLastFeedback == ETouchFeedbackBasicItem ||
-            iLastFeedback == ETouchFeedbackCheckbox ) ) 
-            || (
-             aFeedback == ETouchFeedbackPopUp && 
-             ( iLastFeedback == ETouchFeedbackPopupOpen ||
-              iLastFeedback == ETouchFeedbackOptionsMenuOpen ||
-              iLastFeedback == ETouchFeedbackSubMenuOpen )
-             );
+            iLastFeedback == ETouchFeedbackCheckbox );
     }
 
 // ---------------------------------------------------------------------------
@@ -172,6 +164,7 @@ void CTactileFeedbackResolver::PlayFeedback(
     else if ( IsHigherThanPlaying( aFeedback ) )
         {
         willPlay = ETrue;
+        StopFeedback();
         }
 
     if ( willPlay )
@@ -195,6 +188,16 @@ void CTactileFeedbackResolver::PlayFeedback(
             aPlayAudio = EFalse;
             }
         
+        // check silent mode, if device is in silent mode, 
+        // audio feedback is not allowed.
+        TInt err;
+        TInt isAudioSupported;
+        err = iProfileRepository->Get( KProEngSilenceMode, isAudioSupported );
+        if ( KErrNone == err && 1 == isAudioSupported )
+            {
+            aPlayAudio = EFalse;
+            }
+
         if ( ( aPlayVibra || aPlayAudio ) &&        // #1
                aFeedback != ETouchFeedbackNone )    // #2
             {
@@ -239,7 +242,12 @@ void CTactileFeedbackResolver::InitializeCrKeysL()
     if ( !iRepository )
         {
         iRepository = CRepository::NewL( KCRUidTactileFeedback );    
-        }    
+        }
+
+    if ( !iProfileRepository )
+        {
+        iProfileRepository = CRepository::NewL( KCRUidProfileEngine );
+        }
     
     TInt minInterval(0);
     // Read and store minimun feedback interfal

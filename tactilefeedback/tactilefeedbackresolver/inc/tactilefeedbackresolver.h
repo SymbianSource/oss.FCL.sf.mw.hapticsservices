@@ -244,6 +244,12 @@ private: // data
     CRepository*          iRepository;
     
     /**
+     * Central repository for reading profile settings.
+     * Own.
+     */
+    CRepository*          iProfileRepository;
+    
+    /**
      * Central repository notifier, which sends notification when tactile 
      * feedback settings has been changed.
      * Own.

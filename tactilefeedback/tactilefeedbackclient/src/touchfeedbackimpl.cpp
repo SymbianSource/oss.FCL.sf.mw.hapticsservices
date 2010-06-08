@@ -1146,6 +1146,35 @@ void CTouchFeedbackImpl::InstantFeedback( const CCoeControl* aControl,
     }
         
 // ---------------------------------------------------------------------------
+// CTouchFeedbackImpl::InstantFeedback
+// ---------------------------------------------------------------------------
+//    
+void CTouchFeedbackImpl::InstantFeedback( TTouchLogicalFeedback aType,
+                                          TTouchFeedbackType aFeedbackType )
+    {
+    if ( iClient && ( iAudioEnabledForThisApp || iVibraEnabledForThisApp ) )
+        {
+        // Initialize vibra and audio enablers as given in param.
+        TBool vibraEnabled = aFeedbackType & ETouchFeedbackVibra;
+        TBool audioEnabled = aFeedbackType & ETouchFeedbackAudio;
+
+        // Check application level vibra and audio enablers
+        if ( !iVibraEnabledForThisApp )
+            {
+            vibraEnabled = EFalse;
+            }
+        if ( !iAudioEnabledForThisApp )
+            {
+            audioEnabled = EFalse;
+            }
+
+        TRACE4( "CTouchFeedbackImpl::InstantFeedback, type:=%d Vibra:%d Audio:%d",
+                aType, vibraEnabled, audioEnabled );
+        iClient->ImmediateFeedback( aType, vibraEnabled, audioEnabled );
+        }
+    }
+
+// ---------------------------------------------------------------------------
 // Here we do the actual work for adding new area to the registry
 // (or updating an existing one).
 //
@@ -1730,9 +1759,8 @@ EXPORT_C TInt CFeedbackSpec::AddFeedback( TTouchEventType aEventType,
     item.iEventType = aEventType;        
     
 	// range check. update when logical feedback types are changed.
-    if (! ( aFeedback >= ETouchFeedbackNone || aFeedback <= ETouchFeedbackSensitive) 
-     || ! ( aFeedback >= ETouchFeedbackBasicButton || 
-            aFeedback <= ETouchFeedbackOptionsMenuClosed ) )
+    if ( !(aFeedback >= ETouchFeedbackNone && aFeedback <= ETouchFeedbackSensitive) 
+            && !(aFeedback >= ETouchFeedbackBasicButton && aFeedback <= ETouchFeedbackLongPress) )
         {
         return KErrArgument;
         }

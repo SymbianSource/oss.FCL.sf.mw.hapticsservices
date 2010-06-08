@@ -694,6 +694,25 @@ public:
                                   TTouchFeedbackType aFeedbackType,
                                   const TPointerEvent& aPointerEvent ) = 0;
 
+    /**
+     * Gives direct feedback.
+     *
+     * Notice that the feedback might not be actually played, if 
+     * for example user has disabled the feedback from the settings.
+     *
+     * This function always causes a synchronous client-server transaction, 
+     * and potentially flushing of window server client-side buffer. Using this
+     * overload it is also possible to disable unwanted feedback (vibra/audio)
+     * by giving only wanted feedback type as parameter.
+     *
+     * @since S60 5.2
+     * @param aType         - The logical feedback type to play.
+     * @param aFeedbackType - Feedback types to be played as a bitmask 
+     *                        combination of enumeration items from
+     *                        TTouchFeedbackType
+     */
+    virtual void InstantFeedback( TTouchLogicalFeedback aType,
+                                  TTouchFeedbackType aFeedbackType ) = 0;
 
 
     };

@@ -156,11 +156,7 @@ TInt CTactileAudioPlayer::PlayFeedback( TTouchLogicalFeedback aFeedback )
         case ETouchFeedbackMultipleCheckbox:
         case ETouchFeedbackRotateStep:
         case ETouchFeedbackStopFlick:
-        case ETouchFeedbackLongTap:
-        case ETouchFeedbackSubMenuOpen:
-        case ETouchFeedbackSubMenuClosed:
-        case ETouchFeedbackOptionsMenuOpen:
-        case ETouchFeedbackOptionsMenuClosed:
+        case ETouchFeedbackLongPress:
             volumeIndex = 0;
             break;
         case ETouchFeedbackSensitive:           // flow through
