@@ -130,13 +130,7 @@ TBool CTactileFeedbackResolver::IsHigherThanPlaying(
             iLastFeedback == ETouchFeedbackSensitiveButton ||
             iLastFeedback == ETouchFeedbackSensitiveList ||
             iLastFeedback == ETouchFeedbackList ||
-            iLastFeedback == ETouchFeedbackCheckbox ) ) 
-            || (
-             aFeedback == ETouchFeedbackPopUp && 
-             (iLastFeedback == ETouchFeedbackIncreasingPopUp ||
-              iLastFeedback == ETouchFeedbackOptionsMenuOpened ||
-              iLastFeedback == ETouchFeedbackSubMenuOpened)
-             );
+            iLastFeedback == ETouchFeedbackCheckbox ) );
     }
 
 // ---------------------------------------------------------------------------
@@ -172,6 +166,7 @@ void CTactileFeedbackResolver::PlayFeedback(
     else if ( IsHigherThanPlaying( aFeedback ) )
         {
         willPlay = ETrue;
+        StopFeedback();
         }
 
     if ( willPlay )
@@ -374,7 +369,7 @@ void CTactileFeedbackResolver::ModifyFeedback( TInt aIntensity )
     }
     
 // ---------------------------------------------------------------------------
-// Stop continuous feedback.
+// Stop feedback.
 // ---------------------------------------------------------------------------
 //    
 void CTactileFeedbackResolver::StopFeedback()

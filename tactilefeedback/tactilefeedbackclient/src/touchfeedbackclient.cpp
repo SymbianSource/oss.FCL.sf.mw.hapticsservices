@@ -613,6 +613,10 @@ void CTouchFeedbackClient::StopFeedback( const TUint32 aClientHandle )
         // Clear also client handle to indicate there's no ongoing feedback.
         iClientHandle = 0; 
         }
+    else if ( !iClientHandle ) // Stop instant feedback
+        {
+        iFbClient.StopFeedback();
+        }
     TRACE("CTouchFeedbackClient::StopFeedback - End");
     }    
 

@@ -87,7 +87,7 @@ public:
     void ModifyFeedback( TInt aIntensity );
     
     /**
-     * Stops the ongoing continuous feedback.
+     * Stops the ongoing feedback.
      *
      * @since S60 5.2
      */    

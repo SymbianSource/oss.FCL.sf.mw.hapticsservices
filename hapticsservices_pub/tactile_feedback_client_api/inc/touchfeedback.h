@@ -584,10 +584,10 @@ public:
 
                                  
     /**
-     * This function stops continuous feedback.
+     * This function stops feedback.
      *
      * @since S60 5.2
-     * @param aControl - The control which continuous feedback is stopped.
+     * @param aControl - The control which feedback is stopped.
      */
     virtual void StopFeedback( const CCoeControl* aControl ) = 0;
 
