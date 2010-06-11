@@ -27,6 +27,10 @@
 file=ABI_DIR\BUILD_DIR\tactilefeedbackresolver.dll SHARED_LIB_DIR\tactilefeedbackresolver.dll
 
 // audio file(s) used for wav feed back    
-data=ZPRIVATE\10003B20\TactileFeedbackEffects.ivt  private\10003B20\TactileFeedbackEffects.ivt
+data=ZPRIVATE\10003B20\10.1_TactileFeedbackLevel1_A.ivt  private\10003B20\10.1_TactileFeedbackLevel1_A.ivt
+data=ZPRIVATE\10003B20\10.1_TactileFeedbackLevel2_A.ivt  private\10003B20\10.1_TactileFeedbackLevel2_A.ivt
+data=ZPRIVATE\10003B20\10.1_TactileFeedbackLevel3_A.ivt  private\10003B20\10.1_TactileFeedbackLevel3_A.ivt
+data=ZPRIVATE\10003B20\10.1_TactileFeedbackLevel4_A.ivt  private\10003B20\10.1_TactileFeedbackLevel4_A.ivt
+data=ZPRIVATE\10003B20\10.1_TactileFeedbackLevel5_A.ivt  private\10003B20\10.1_TactileFeedbackLevel5_A.ivt
 
 #endif // TACTILEFEEDBACKRESOLVER_IBY
