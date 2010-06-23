@@ -71,11 +71,7 @@ _LIT8( KTFMultipleCheckbox,     "TFMultipleCheckbox");      // Mapped to IVT fil
 _LIT8( KTFRotateStep,           "TFRotateStep");            // Mapped to IVT file version 10.1
 _LIT8( KTFSensitiveSlider,      "TFSensitiveSlider");       // Mapped to IVT file version 10.1
 _LIT8( KTFStopFlick,            "TFStopFlick");             // Mapped to IVT file version 10.1
-_LIT8( KTFLongTap,              "TFLongTap");               // Mapped to IVT file version 10.1
-_LIT8( KTFSubMenuOpen,          "TFSubMenuOpen");           // Mapped to IVT file version 10.1
-_LIT8( KTFSubMenuClosed,        "TFSubMenuClosed");         // Mapped to IVT file version 10.1
-_LIT8( KTFOptionsMenuOpen,      "TFOptionsMenuOpen");       // Mapped to IVT file version 10.1
-_LIT8( KTFOptionsMenuClosed,    "TFOptionsMenuClosed");     // Mapped to IVT file version 10.1
+_LIT8( KTFLongPress,              "TFLongPress");               // Mapped to IVT file version 10.1
 
 // Continuous feedback's names
 _LIT8( KTFContinuousSmooth,     "TFContinuousSmooth");
@@ -83,7 +79,6 @@ _LIT8( KTFContinuousSlider,     "TFContinuousSlider");
 _LIT8( KTFContinuousInput,      "TFContinuousInput");
 _LIT8( KTFContinuousPopup,      "TFContinuousPopup");       // Mapped to IVT file version 10.1
 _LIT8( KTFContinuousPinch,      "TFContinuousPinch");       // Mapped to IVT file version 10.1
-_LIT8( KTFDynamicSlider,        "TFDynamicSlider");         // Mapped to IVT file version 10.1
 // ---------------------------------------------------------------------------
 // Constructor.
 // ---------------------------------------------------------------------------
@@ -315,20 +310,8 @@ void CTactileHapticsPlayer::DoPlayFeedbackL( TTouchLogicalFeedback aFeedback )
         case ETouchFeedbackStopFlick:
             name = KTFStopFlick;
             break;
-        case ETouchFeedbackLongTap:
-            name = KTFLongTap;
-            break;
-        case ETouchFeedbackSubMenuOpen:
-            name = KTFSubMenuOpen;
-            break;
-        case ETouchFeedbackSubMenuClosed:
-            name = KTFSubMenuClosed;
-            break;
-        case ETouchFeedbackOptionsMenuOpen:
-            name = KTFOptionsMenuOpen;
-            break;
-        case ETouchFeedbackOptionsMenuClosed:
-            name = KTFOptionsMenuClosed;
+        case ETouchFeedbackLongPress:
+            name = KTFLongPress;
             break;
         default:
             User::Leave( KErrArgument );
@@ -439,9 +422,6 @@ TInt CTactileHapticsPlayer::StartFeedback( TTouchContinuousFeedback aFeedback,
         case ETouchContinuousPinch:
             name = KTFContinuousPinch;
             break;    
-        case ETouchDynamicSlider:
-            name = KTFDynamicSlider;
-            break;
         default:
             ret = KErrArgument;
             break;

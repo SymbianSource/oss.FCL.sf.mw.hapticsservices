@@ -136,11 +136,7 @@ TInt CTactileVibraPlayer::PlayFeedback( TTouchLogicalFeedback aFeedback )
             case ETouchFeedbackMultipleCheckbox:
             case ETouchFeedbackRotateStep:
             case ETouchFeedbackStopFlick:
-            case ETouchFeedbackLongTap:
-            case ETouchFeedbackSubMenuOpen:
-            case ETouchFeedbackSubMenuClosed:
-            case ETouchFeedbackOptionsMenuOpen:
-            case ETouchFeedbackOptionsMenuClosed:
+            case ETouchFeedbackLongPress:
                 effectIndex = 0;
                 break;
             case ETouchFeedbackSensitive:           // flow through

@@ -97,11 +97,7 @@ enum TTouchLogicalFeedback
     ETouchFeedbackRotateStep,
     ETouchFeedbackSensitiveSlider,
     ETouchFeedbackStopFlick,
-    ETouchFeedbackLongTap,
-    ETouchFeedbackSubMenuOpen,
-    ETouchFeedbackSubMenuClosed,
-    ETouchFeedbackOptionsMenuOpen,
-    ETouchFeedbackOptionsMenuClosed
+    ETouchFeedbackLongPress
     };
     
 /**  
@@ -114,8 +110,7 @@ enum TTouchContinuousFeedback
     ETouchContinuousSlider,
     ETouchContinuousInput,
     ETouchContinuousPopup,
-    ETouchContinuousPinch,
-    ETouchDynamicSlider
+    ETouchContinuousPinch
     };
     
 /**  
