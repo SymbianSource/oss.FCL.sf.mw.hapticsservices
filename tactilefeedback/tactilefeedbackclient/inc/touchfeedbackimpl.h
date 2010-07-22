@@ -305,6 +305,12 @@ public: // new API functions since 5.2, defined in MTouchFeedback
                           TTouchFeedbackType aFeedbackType,
                           const TPointerEvent& aPointerEvent );
       
+    /**
+     * @see MTouchFeedback.
+     */
+    void InstantFeedback( TTouchLogicalFeedback aType,
+                          TTouchFeedbackType aFeedbackType );
+
 private:
     /**
      * Constructor.

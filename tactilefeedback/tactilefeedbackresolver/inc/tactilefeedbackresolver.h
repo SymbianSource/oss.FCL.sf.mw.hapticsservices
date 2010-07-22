@@ -206,7 +206,16 @@ private:
      * the player plugin.
      */    
     void CreateAudioPlayerL( TUid aAudioUid );
-     
+
+    /**
+     * Return ETrue if aFeedback's priority is higher than current playing
+     * feedback, namely iLastFeedback.
+     *
+     * TODO: Currently, we only take Popup and Button effects into
+     * account. Ultimately, a complete priority queue should be set up.
+     */
+    TBool IsHigherThanPlaying ( TTouchLogicalFeedback aFeedback ) const;
+    
 private: // data
 
     /**
@@ -233,6 +242,12 @@ private: // data
      * Own.
      */
     CRepository*          iRepository;
+    
+    /**
+     * Central repository for reading profile settings.
+     * Own.
+     */
+    CRepository*          iProfileRepository;
     
     /**
      * Central repository notifier, which sends notification when tactile 
@@ -279,6 +294,12 @@ private: // data
      * EFalse - audio feedback is played first.
      */
     TBool iVibraFirst;
+
+    /**
+     * Name of the last played feedback.
+     * 
+     */
+    TTouchLogicalFeedback iLastFeedback;
     };
 
 

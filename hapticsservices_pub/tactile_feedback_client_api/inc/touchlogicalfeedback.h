@@ -97,7 +97,8 @@ enum TTouchLogicalFeedback
     ETouchFeedbackRotateStep,
     ETouchFeedbackSensitiveSlider,
     ETouchFeedbackStopFlick,
-    ETouchFeedbackLongPress
+    ETouchFeedbackLongPress,
+	ETouchFeedbackLongTap
     };
     
 /**  

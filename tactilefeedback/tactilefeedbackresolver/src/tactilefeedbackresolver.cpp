@@ -23,6 +23,7 @@
 
 #include <centralrepository.h>
 #include <ecom/implementationinformation.h>
+#include <ProfileEngineInternalCRKeys.h>
 
 #include "tactilefeedbackprivatecrkeys.h"
 #include "tactilefeedbackinternalpskeys.h"
@@ -47,7 +48,8 @@ _LIT_SECURITY_POLICY_C1(   KTactileWritePolicy, ECapabilityWriteDeviceData );
 // ---------------------------------------------------------------------------
 //
 CTactileFeedbackResolver::CTactileFeedbackResolver() : 
-    iFeedbackStarted( EFalse )
+    iFeedbackStarted( EFalse ), 
+    iLastFeedback( ETouchFeedbackNone ) 
     {
     }
 
@@ -102,12 +104,33 @@ CTactileFeedbackResolver::~CTactileFeedbackResolver()
     {
     delete iCenRepNotifier;
     delete iRepository;
+    delete iProfileRepository;
     delete iPropertyWatcher;
     delete iHapticsPlayer;
     delete iAudioPlayer;
     REComSession::FinalClose();
     }
+
+TBool CTactileFeedbackResolver::IsHigherThanPlaying(
+    TTouchLogicalFeedback aFeedback ) const
+    {
+    if( aFeedback == ETouchFeedbackBasicItem &&
+        iLastFeedback == ETouchFeedbackSensitiveItem )
+        {
+        return ETrue;
+        }
     
+    return ( aFeedback == ETouchFeedbackPopUp || 
+            aFeedback == ETouchFeedbackPopupOpen || 
+            aFeedback == ETouchFeedbackPopupClose ||
+            aFeedback == ETouchFeedbackBounceEffect ) &&
+            ( iLastFeedback == ETouchFeedbackBasicButton ||
+            iLastFeedback == ETouchFeedbackSensitiveButton ||
+            iLastFeedback == ETouchFeedbackSensitiveItem ||
+            iLastFeedback == ETouchFeedbackBasicItem ||
+            iLastFeedback == ETouchFeedbackCheckbox );
+    }
+
 // ---------------------------------------------------------------------------
 // We play feedback in case all three conditions are met:
 // 
@@ -129,17 +152,30 @@ void CTactileFeedbackResolver::PlayFeedback(
     
     TTimeIntervalMicroSeconds interval = 
         now.MicroSecondsFrom( iLastFeedbackTimeStamp );
+
+    TBool willPlay = EFalse;
     
-     if ( iMinimumInterval == TTimeIntervalMicroSeconds( 0 ) || 
-          now < iLastFeedbackTimeStamp ||                       
-          iMinimumInterval <= interval )                        
+    if ( iMinimumInterval == TTimeIntervalMicroSeconds( 0 ) || 
+         now < iLastFeedbackTimeStamp ||                       
+         iMinimumInterval <= interval )
+        {
+        willPlay = ETrue;
+        }
+    else if ( IsHigherThanPlaying( aFeedback ) )
+        {
+        willPlay = ETrue;
+        StopFeedback();
+        }
+
+    if ( willPlay )
         {
         // First store the timestamp of this feedback playing moment.
         // This really needs to be done when 
         // actually playing feedback (not when feedback was requested
         // but filtered out).
         iLastFeedbackTimeStamp = now;      
-    
+
+        iLastFeedback = aFeedback;
     
         // Force vibra- and audio feedback off if those are globally disabled
         if ( !iVibraEnabled )
@@ -152,6 +188,16 @@ void CTactileFeedbackResolver::PlayFeedback(
             aPlayAudio = EFalse;
             }
         
+        // check silent mode, if device is in silent mode, 
+        // audio feedback is not allowed.
+        TInt err;
+        TInt isAudioSupported;
+        err = iProfileRepository->Get( KProEngSilenceMode, isAudioSupported );
+        if ( KErrNone == err && 1 == isAudioSupported )
+            {
+            aPlayAudio = EFalse;
+            }
+
         if ( ( aPlayVibra || aPlayAudio ) &&        // #1
                aFeedback != ETouchFeedbackNone )    // #2
             {
@@ -196,7 +242,12 @@ void CTactileFeedbackResolver::InitializeCrKeysL()
     if ( !iRepository )
         {
         iRepository = CRepository::NewL( KCRUidTactileFeedback );    
-        }    
+        }
+
+    if ( !iProfileRepository )
+        {
+        iProfileRepository = CRepository::NewL( KCRUidProfileEngine );
+        }
     
     TInt minInterval(0);
     // Read and store minimun feedback interfal

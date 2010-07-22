@@ -24,6 +24,7 @@
 
 
 #include <e32std.h>
+#include <e32svr.h>
 #include <touchlogicalfeedback.h>
 
 

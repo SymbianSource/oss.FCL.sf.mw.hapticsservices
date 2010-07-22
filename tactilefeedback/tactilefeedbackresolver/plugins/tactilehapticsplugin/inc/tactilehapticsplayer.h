@@ -118,6 +118,11 @@ private:
     void DoPlayFeedbackL( TTouchLogicalFeedback aFeedback );
     
     /**
+     * Get IVT file Id via vibra level.
+     */
+    TUint32 IVTFileId();
+    
+    /**
      * Reads IVT data from file to buffer. 
      *
      */    
@@ -204,6 +209,11 @@ private: // data
      * Own.  
      */
     CProfileChangeNotifyHandler* iProfileHandler;
+    
+    /**
+     * Current vibra level.
+     */
+    TInt iVibraLevel;
     };
 
 

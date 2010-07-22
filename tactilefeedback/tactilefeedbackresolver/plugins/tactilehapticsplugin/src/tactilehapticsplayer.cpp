@@ -46,39 +46,39 @@ _LIT8( KTFBasic,                "TFBasic");
 _LIT8( KTFSensitive,            "TFSensitive");
 _LIT8( KTFBasicButton,          "TFBasicButton");
 _LIT8( KTFSensitiveButton,      "TFSensitiveButton");
-_LIT8( KTFBasicItem,            "TFList");                  // Mapped to IVT file version 9.2
-_LIT8( KTFSensitiveItem,        "TFSensitiveList");         // Mapped to IVT file version 9.2
-_LIT8( KTFBounceEffect,         "TFBoundaryList");          // Mapped to IVT file version 9.2
-_LIT8( KTFBasicSlider,          "TFSlider");                // Mapped to IVT file version 9.2
-_LIT8( KTFEditor,               "TFEdit");                  // Mapped to IVT file version 9.2
+_LIT8( KTFBasicItem,            "TFBasicItem");             // Mapped to IVT file version 9.2
+_LIT8( KTFSensitiveItem,        "TFSensitiveItem");         // Mapped to IVT file version 9.2
+_LIT8( KTFBounceEffect,         "TFBounceEffect");          // Mapped to IVT file version 9.2
+_LIT8( KTFBasicSlider,          "TFBasicSlider");           // Mapped to IVT file version 9.2
+_LIT8( KTFEditor,               "TFEditor");                // Mapped to IVT file version 9.2
 _LIT8( KTFLineSelection,        "TFLineSelection");
 _LIT8( KTFBlankSelection,       "TFBlankSelection");
 _LIT8( KTFTextSelection,        "TFTextSelection");
 _LIT8( KTFEmptyLineSelection,   "TFEmptyLineSelection");
 _LIT8( KTFPopUp,                "TFPopUp");
-_LIT8( KTFPopupOpen,            "TFIncreasingPopUp");       // Mapped to IVT file version 9.2
-_LIT8( KTFPopupClose,           "TFDecreasingPopUp");       // Mapped to IVT file version 9.2
-_LIT8( KTFItemScroll,           "TFFlick");                 // Mapped to IVT file version 9.2
+_LIT8( KTFPopupOpen,            "TFPopupOpen");             // Mapped to IVT file version 9.2
+_LIT8( KTFPopupClose,           "TFPopupClose");            // Mapped to IVT file version 9.2
+_LIT8( KTFItemScroll,           "TFItemScroll");            // Mapped to IVT file version 9.2
 _LIT8( KTFCheckbox,             "TFCheckbox");
-_LIT8( KTFBasicKeypad,          "TFBasic");                 // To be released in IVT file version 10.1
-_LIT8( KTFSensitiveKeypad,      "TFSensitiveInput");        // Mapped to IVT file version 9.2
-_LIT8( KTFMultitouchActivate,   "TFMultiTouchRecognized");  // Mapped to IVT file version 9.2
-_LIT8( KTFFlick,                "TFBasic");                 // To be released in IVT file version 10.1
-_LIT8( KTFItemDrop,             "TFBasic");                 // To be released in IVT file version 10.1
-_LIT8( KTFItemMoveOver,         "TFBasic");                 // To be released in IVT file version 10.1
-_LIT8( KTFItemPick,             "TFBasic");                 // To be released in IVT file version 10.1
-_LIT8( KTFMultipleCheckbox,     "TFBasic");                 // To be released in IVT file version 10.1      
-_LIT8( KTFRotateStep,           "TFBasic");                 // To be released in IVT file version 10.1
-_LIT8( KTFSensitiveSlider,      "TFBasic");                 // To be released in IVT file version 10.1       
-_LIT8( KTFStopFlick,            "TFBasic");                 // To be released in IVT file version 10.1
-_LIT8( KTFLongPress,            "TFBasic");                 // To be released in IVT file version 10.1
+_LIT8( KTFBasicKeypad,          "TFBasicKeypad");           // Mapped to IVT file version 10.1
+_LIT8( KTFSensitiveKeypad,      "TFSensitiveKeypad");       // Mapped to IVT file version 9.2
+_LIT8( KTFMultitouchActivate,   "TFMultitouchActivate");    // Mapped to IVT file version 9.2
+_LIT8( KTFFlick,                "TFFlick");                 // Mapped to IVT file version 10.1
+_LIT8( KTFItemDrop,             "TFItemDrop");              // Mapped to IVT file version 10.1
+_LIT8( KTFItemMoveOver,         "TFItemMoveOver");          // Mapped to IVT file version 10.1
+_LIT8( KTFItemPick,             "TFItemPick");              // Mapped to IVT file version 10.1
+_LIT8( KTFMultipleCheckbox,     "TFMultipleCheckbox");      // Mapped to IVT file version 10.1
+_LIT8( KTFRotateStep,           "TFRotateStep");            // Mapped to IVT file version 10.1
+_LIT8( KTFSensitiveSlider,      "TFSensitiveSlider");       // Mapped to IVT file version 10.1
+_LIT8( KTFStopFlick,            "TFStopFlick");             // Mapped to IVT file version 10.1
+_LIT8( KTFLongPress,              "TFLongPress");               // Mapped to IVT file version 10.1
 
 // Continuous feedback's names
 _LIT8( KTFContinuousSmooth,     "TFContinuousSmooth");
 _LIT8( KTFContinuousSlider,     "TFContinuousSlider");
 _LIT8( KTFContinuousInput,      "TFContinuousInput");
-_LIT8( KTFContinuousPopup,      "TFBasic");                 // To be released in IVT file version 10.1
-_LIT8( KTFContinuousPinch,      "TFBasic");                 // To be released in IVT file version 10.1
+_LIT8( KTFContinuousPopup,      "TFContinuousPopup");       // Mapped to IVT file version 10.1
+_LIT8( KTFContinuousPinch,      "TFContinuousPinch");       // Mapped to IVT file version 10.1
 // ---------------------------------------------------------------------------
 // Constructor.
 // ---------------------------------------------------------------------------
@@ -123,12 +123,26 @@ void CTactileHapticsPlayer::ConstructL()
     // As a temporary fix to EAKH-7LKANT, the strength is (over)read from
     // profiles engine
     InitializeProfilesEngineL();
+    
+    if ( iVibraLevel > EProfileTactileFeedbackLevel5 )
+        {
+        User::Leave( KErrGeneral );
+        }
 
     User::LeaveIfError( iHaptics->SetDeviceProperty( 
                                         CHWRMHaptics::EHWRMHapticsStrength, 
                                         iStrength ) );
     TFileName ivtFile;
-    iRepository.Get( KTactileHapticsIVTFile, ivtFile );
+    if ( iVibraLevel != EProfileTactileFeedbackOff )
+        {
+        iRepository.Get( IVTFileId(), ivtFile );
+        }
+    else
+        {
+        // Load KTactileHapticsLevel1IVTFile as default IVT file
+        // to start up if vibra level is EProfileTactileFeedbackOff.
+        iRepository.Get( KTactileHapticsLevel1IVTFile, ivtFile );
+        }
     HBufC8* ivtBuf = IVTBufAllocL( ivtFile );
 
     CleanupStack::PushL( ivtBuf );
@@ -198,8 +212,9 @@ TInt CTactileHapticsPlayer::PlayFeedback( TTouchLogicalFeedback aFeedback )
 //
 void CTactileHapticsPlayer::DoPlayFeedbackL( TTouchLogicalFeedback aFeedback )
     {
-    // Check if hapticts strength is set to zero.
-    if ( !iStrength )
+    // Check if hapticts strength is set to zero or
+    // vibra level is EProfileTactileFeedbackOff.
+    if ( !iStrength || iVibraLevel == EProfileTactileFeedbackOff)
         {
         User::Leave(KErrNotReady);
         }
@@ -315,6 +330,34 @@ void CTactileHapticsPlayer::DoPlayFeedbackL( TTouchLogicalFeedback aFeedback )
     }
 
 // ---------------------------------------------------------------------------
+// Get IVT file Id via vibra level.
+// ---------------------------------------------------------------------------
+//
+TUint32 CTactileHapticsPlayer::IVTFileId()
+    {
+    TUint32 fileId = 0;
+    switch ( iVibraLevel )
+        {
+        case EProfileTactileFeedbackLevel1:
+            fileId = KTactileHapticsLevel1IVTFile;
+            break;
+        case EProfileTactileFeedbackLevel2:
+            fileId = KTactileHapticsLevel2IVTFile;
+            break;
+        case EProfileTactileFeedbackLevel3:
+            fileId = KTactileHapticsLevel3IVTFile;
+            break;
+        case EProfileTactileFeedbackLevel4:
+            fileId = KTactileHapticsLevel4IVTFile;
+            break;
+        case EProfileTactileFeedbackLevel5:
+            fileId = KTactileHapticsLevel5IVTFile;
+            break;
+        }
+    return fileId;
+    }
+
+// ---------------------------------------------------------------------------
 // Load IVT file.
 // ---------------------------------------------------------------------------
 //
@@ -412,9 +455,9 @@ TInt CTactileHapticsPlayer::StartFeedback( TTouchContinuousFeedback aFeedback,
                                                              periodicDef );
 
                 // Effect's magnitude value in IVT file is used as max value for 
-                // continuous effects.                                        
-                iMultiplier = periodicDef.iMagnitude / 100;                   
-                periodicDef.iMagnitude = aIntensity * iMultiplier;
+                // continuous effects and Attack level is used as minimum value
+                iMultiplier = ( periodicDef.iMagnitude - periodicDef.iAttackLevel ) / 100;
+                periodicDef.iMagnitude = aIntensity * iMultiplier + periodicDef.iAttackLevel;
 
                 if ( ret == KErrNone )
                     {
@@ -431,10 +474,10 @@ TInt CTactileHapticsPlayer::StartFeedback( TTouchContinuousFeedback aFeedback,
                                                             iEffectIndex,
                                                             magSweepDef );
                  
-                // Effect's magnitude value in IVT file is used as max value for 
-                // continuous effects.                                        
-                iMultiplier = magSweepDef.iMagnitude / 100;                   
-                magSweepDef.iMagnitude = aIntensity * iMultiplier;
+                // Effect's magnitude value in IVT file is used as max value for
+                // continuous effects and Attack level is used as minimum value
+                iMultiplier = ( magSweepDef.iMagnitude - magSweepDef.iAttackLevel ) / 100;
+                magSweepDef.iMagnitude = aIntensity * iMultiplier + magSweepDef.iAttackLevel;
                 
                 if ( ret == KErrNone )
                     {
@@ -488,7 +531,7 @@ TInt CTactileHapticsPlayer::ModifyFeedback( TInt aIntensity )
                                                            iEffectIndex,
                                                            periodicDef );
                                                               
-                    periodicDef.iMagnitude = intensity;
+                    periodicDef.iMagnitude = intensity + periodicDef.iAttackLevel;
                     
                     iHaptics->ModifyPlayingPeriodicEffect( iEffectHandle, 
                                                            periodicDef );            
@@ -502,7 +545,7 @@ TInt CTactileHapticsPlayer::ModifyFeedback( TInt aIntensity )
                                                            iEffectIndex,
                                                            magSweepDef );
                                                               
-                    magSweepDef.iMagnitude = intensity;
+                    magSweepDef.iMagnitude = intensity + magSweepDef.iAttackLevel;
                     
                     iHaptics->ModifyPlayingMagSweepEffect( iEffectHandle, 
                                                            magSweepDef );
@@ -553,10 +596,14 @@ void CTactileHapticsPlayer::DoHandleNotifyGenericL( TUint32 aId )
                                          iStrength );        
             }
             break;
-        case KTactileHapticsIVTFile:
+        case KTactileHapticsLevel1IVTFile:
+        case KTactileHapticsLevel2IVTFile:
+        case KTactileHapticsLevel3IVTFile:
+        case KTactileHapticsLevel4IVTFile:
+        case KTactileHapticsLevel5IVTFile:
             {
             TFileName ivtFile;
-            iRepository.Get( KTactileHapticsIVTFile, ivtFile );
+            iRepository.Get( aId, ivtFile );
             
             HBufC8* ivtBuf = IVTBufAllocL( ivtFile );
             if ( ivtBuf )
@@ -652,8 +699,14 @@ void CTactileHapticsPlayer::HandleActiveProfileEventL(
     TProfileEvent /*aProfileEvent*/, 
     TInt /*aProfileId*/ )
     {
+    TInt oldVibraLevel = iVibraLevel;
     InitializeProfilesEngineL();
-    iHaptics->SetDeviceProperty( CHWRMHaptics::EHWRMHapticsStrength, iStrength ); 
+    iHaptics->SetDeviceProperty( CHWRMHaptics::EHWRMHapticsStrength, iStrength );
+    if ( iVibraLevel != oldVibraLevel &&
+         iVibraLevel != EProfileTactileFeedbackOff )
+        {
+        HandleNotifyGeneric( IVTFileId() );
+        }
     }
 
 // ---------------------------------------------------------------------------
@@ -676,10 +729,8 @@ void CTactileHapticsPlayer::InitializeProfilesEngineL()
     const MProfileFeedbackSettings& feedbackSettings = 
      extraSettings.ProfileFeedbackSettings();
  
-    TProfileTactileFeedback strength = feedbackSettings.TactileFeedback();
-    iStrength = 100 * ( EProfileTactileFeedbackLevel3 == strength ? 100 :
-                        EProfileTactileFeedbackLevel2 == strength ? 60 :
-                        EProfileTactileFeedbackLevel1 == strength ? 30 : 0 );
+    iVibraLevel = feedbackSettings.TactileFeedback();
+    iStrength = 100 * ( EProfileTactileFeedbackOff != iVibraLevel ? 100 : 0 );
  
     activeProfile->Release();
     
