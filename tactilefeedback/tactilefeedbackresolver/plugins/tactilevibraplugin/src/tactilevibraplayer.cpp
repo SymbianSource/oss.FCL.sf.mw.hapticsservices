@@ -317,8 +317,8 @@ void CTactileVibraPlayer::ReadSettings()
     
     iVibraParams.Reset();
 
-    iVibraParams.Append( basicParams );        
-    iVibraParams.Append( sensitiveParams );         
+    TRAP_IGNORE( iVibraParams.AppendL( basicParams ) );
+    TRAP_IGNORE( iVibraParams.AppendL( sensitiveParams ) );
     TRACE("CTactileVibraPlayer::ReadSettings - End");      
     }    
     

@@ -347,10 +347,9 @@ void CTactileAudioPlayer::ReadSettingsL()
     iRepository.Get( KTactileAudioWavFileBasicLevel2, basicFileName );
 
     iRepository.Get( KTactileAudioWavFileSensitiveLevel2, sensitiveFileName );
-    
-    iVolumeLevels.Append( basicVolumeLevel );
-    iVolumeLevels.Append( sensitiveVolumeLevel );
-    
+    iVolumeLevels.AppendL( basicVolumeLevel );
+    iVolumeLevels.AppendL( sensitiveVolumeLevel );
+
     TRACE("CTactileAudioPlayer::ReadSettingsL() - End");
     }
 

@@ -194,8 +194,8 @@ EXPORT_C void CTactileAreaRegistry::HandleWindowGroupCreated(
     
     newItem.iWindowGroupId    = aIdentifier;
     newItem.iConnectionHandle = aConnectionHandle;
-    
-    iWgArray.Append( newItem );
+    // if append fail just make its action like before
+    TRAP_IGNORE( iWgArray.AppendL( newItem ) );
     }
     
     
