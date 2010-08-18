@@ -755,8 +755,8 @@ void CTouchFeedbackImpl::EnableFeedbackForControl(
                 newCacheEntry.iAudioDisabled  = !aEnableAudio;
                 newCacheEntry.iVisible        = aControl->IsVisible();
                 newCacheEntry.iDimmed         = aControl->IsDimmed();
-                        
-                iControlCache.Append( newCacheEntry );                        
+                // if append fail just make its action like before
+                TRAP_IGNORE( iControlCache.AppendL( newCacheEntry ) );
                 }
             }        
         }
@@ -1767,8 +1767,8 @@ EXPORT_C TInt CFeedbackSpec::AddFeedback( TTouchEventType aEventType,
     item.iFeedback = aFeedback;        
     item.iFeedbackType = aFeedbackType;
         
-    iFbArray.Append(item);
-    return KErrNone;
+    TInt err = iFbArray.Append(item);
+    return err;
     }    
 
 // ---------------------------------------------------------------------------
@@ -1787,7 +1787,8 @@ void CFeedbackSpec::GetFeedbackSpec( RArray<TTactileFbItem>& aArray )
         item.iFeedback  = iFbArray[i].iFeedback;
         item.iEventType = iFbArray[i].iEventType;
         item.iFeedbackType = iFbArray[i].iFeedbackType;
-        aArray.Append(item);
+        // if append fail just make its action like before
+        TRAP_IGNORE( aArray.AppendL( item ) );
         }
     }
 

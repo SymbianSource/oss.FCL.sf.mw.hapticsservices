@@ -421,8 +421,9 @@ void CTactileTonePlayer::ReadSettings()
     sensitiveParams.iVolume = ScaleVolume( sensitiveParams.iVolume );
     
     // Store parameters for different feedback types
-    iSoundParams.Append( basicParams );
-    iSoundParams.Append( sensitiveParams );
+    // if append fail just make its action like before
+    TRAP_IGNORE( iSoundParams.AppendL( basicParams ) );
+    TRAP_IGNORE( iSoundParams.AppendL( sensitiveParams ) );
     TRACE("CTactileTonePlayer::ReadSettingsL - End");        
     }
 

@@ -18,8 +18,7 @@
 
 #include <platform_paths.hrh>
 
-PRJ_EXPORTS
-../rom/tactilefeedback.iby  CORE_IBY_EXPORT_PATH(mw, tactilefeedback.iby)
+#include "../rom/bld.inf"
 
 #ifndef TOOLS
 
