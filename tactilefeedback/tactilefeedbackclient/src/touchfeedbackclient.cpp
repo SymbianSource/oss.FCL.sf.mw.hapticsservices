@@ -35,6 +35,8 @@
 const TInt KTactileChunkInitialSize = 4096; // 4kB
 const TInt KTactileChunkMaxSize     = 262144; // 256kB
 const TUid KTactileClickPluginUid   = { 0x2000B493 };
+
+_LIT( KChunkNameFormat, "PID_0x%Lx_TID_0x%Lx" );
 // ======== MEMBER FUNCTIONS ========
 
 // ---------------------------------------------------------------------------
@@ -86,15 +88,14 @@ void CTouchFeedbackClient::ConstructL()
         }
 
     // #2 Create shared chunk 
-    RThread me;
-
     TTactileFeedbackConnectData data;
     
     // Set window group identifier
     data.iWindowGroupId = CCoeEnv::Static()->RootWin().Identifier();
            
-    // We use our own thread name as name for the chunk       
-    data.iChunkName.Copy( me.Name().Right( KMaxKernelName ) );
+    // We use our own process id and thread id as name for the chunk
+    data.iChunkName.Format( KChunkNameFormat,
+                            RProcess().Id().Id(), RThread().Id().Id() );
     
     // Now create the chunk
     TInt err = iChunk.CreateGlobal( data.iChunkName, 
