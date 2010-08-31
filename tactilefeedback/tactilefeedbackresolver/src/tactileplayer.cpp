@@ -118,8 +118,8 @@ EXPORT_C TInt CTactilePlayer::ModifyFeedback( TInt /*aIntensity*/ )
 //    
 EXPORT_C void CTactilePlayer::StopFeedback()
     {
-    // Empty implementation for plugins, which needn't stop 
-    // playing feedback.
+    // Empty implementation for plugins, which don't support 
+    // continuous feedback.
     }
     
 // ---------------------------------------------------------------------------

@@ -92,7 +92,7 @@ public:
     IMPORT_C void ModifyFeedback( TInt aIntensity );
     
     /**
-     * Stops the ongoing feedback.
+     * Stops the ongoing continuous feedback.
      *
      * @since S60 5.2
      */    

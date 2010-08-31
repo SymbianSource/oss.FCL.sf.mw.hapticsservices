@@ -52,7 +52,7 @@ void CTactileVibraPlayer::ConstructL()
     User::LeaveIfError( iRepository.Get( KTactileFeedbackHapticsStrength, 
                                          iVibraLevel ) );
                                          
-    if ( iVibraLevel > EProfileTactileFeedbackLevel3 )
+    if ( iVibraLevel > EProfileTactileFeedbackLevel5 )
         {
         User::Leave( KErrGeneral );
         }
@@ -114,33 +114,36 @@ TInt CTactileVibraPlayer::PlayFeedback( TTouchLogicalFeedback aFeedback )
             {
             case ETouchFeedbackBasic:               // flow through
             case ETouchFeedbackBasicButton:         // flow through
-            case ETouchFeedbackList:                // flow through
-            case ETouchFeedbackBoundaryList:        // flow through
-            case ETouchFeedbackSlider:              // flow through
-            case ETouchFeedbackEdit:                // flow through
+            case ETouchFeedbackBasicItem:           // flow through
+            case ETouchFeedbackBounceEffect:        // flow through
+            case ETouchFeedbackBasicSlider:         // flow through
+            case ETouchFeedbackEditor:              // flow through
             case ETouchFeedbackLineSelection:       // flow through
             case ETouchFeedbackBlankSelection:      // flow through
             case ETouchFeedbackTextSelection:       // flow through
             case ETouchFeedbackEmptyLineSelection:  // flow through
-            case ETouchFeedbackTab:                 // flow through
             case ETouchFeedbackPopUp:               // flow through
-            case ETouchFeedbackIncreasingPopUp:     // flow through
-            case ETouchFeedbackDecreasingPopUp:     // flow through
-            case ETouchFeedbackFlick:               // flow through
+            case ETouchFeedbackPopupOpen:           // flow through
+            case ETouchFeedbackPopupClose:          // flow through
+            case ETouchFeedbackItemScroll:          // flow through
             case ETouchFeedbackCheckbox:            // flow through
-            case ETouchFeedbackCharacterInputButton:
-            case ETouchFeedbackOptionsMenuOpened:
-            case ETouchFeedbackOptionsMenuClosed:
-            case ETouchFeedbackSubMenuOpened:
-            case ETouchFeedbackSubMenuClosed:
-            case ETouchFeedbackLongTap:
-            case ETouchFeedbackMultiTouchRecognized:
+            case ETouchFeedbackMultitouchActivate:
+            case ETouchFeedbackBasicKeypad:
+            case ETouchFeedbackFlick:
+            case ETouchFeedbackItemDrop:
+            case ETouchFeedbackItemMoveOver:
+            case ETouchFeedbackItemPick:
+            case ETouchFeedbackMultipleCheckbox:
+            case ETouchFeedbackRotateStep:
+            case ETouchFeedbackStopFlick:
+            case ETouchFeedbackLongPress:
                 effectIndex = 0;
                 break;
             case ETouchFeedbackSensitive:           // flow through
             case ETouchFeedbackSensitiveButton:     // flow through
-            case ETouchFeedbackSensitiveList:      
-            case ETouchFeedbackSensitiveInput:
+            case ETouchFeedbackSensitiveItem:      
+            case ETouchFeedbackSensitiveKeypad:
+            case ETouchFeedbackSensitiveSlider:
                 effectIndex = 1;                    
                 break;                              
             default:                                
@@ -213,7 +216,7 @@ TInt CTactileVibraPlayer::PlayPreviewFeedback( TInt aLevel,
     TInt ret( KErrArgument );
     
     if ( aLevel > EProfileTactileFeedbackOff  &&
-         aLevel <= EProfileTactileFeedbackLevel3 )
+         aLevel <= EProfileTactileFeedbackLevel5 )
         {
         iOriginalLevel = iVibraLevel;
         iVibraLevel = aLevel;
@@ -283,11 +286,39 @@ void CTactileVibraPlayer::ReadSettings()
         iRepository.Get( KTactileVibraDurationSensitiveLevel3,  
                           sensitiveParams.iTime );
         }
+    else if ( iVibraLevel == EProfileTactileFeedbackLevel4 )
+        {
+        // Read settings for ETouchFeedbackBasic
+        iRepository.Get( KTactileVibraIntensityBasicLevel4, 
+                          basicParams.iIntensity );
+        iRepository.Get( KTactileVibraDurationBasicLevel4,  
+                          basicParams.iTime );
+        
+        // Read settings for ETouchFeedbackSensitive
+        iRepository.Get( KTactileVibraIntensitySensitiveLevel4, 
+                          sensitiveParams.iIntensity );
+        iRepository.Get( KTactileVibraDurationSensitiveLevel4,  
+                          sensitiveParams.iTime );
+        }
+    else if ( iVibraLevel == EProfileTactileFeedbackLevel5 )
+        {
+        // Read settings for ETouchFeedbackBasic
+        iRepository.Get( KTactileVibraIntensityBasicLevel5, 
+                          basicParams.iIntensity );
+        iRepository.Get( KTactileVibraDurationBasicLevel5,  
+                          basicParams.iTime );
+        
+        // Read settings for ETouchFeedbackSensitive
+        iRepository.Get( KTactileVibraIntensitySensitiveLevel5, 
+                          sensitiveParams.iIntensity );
+        iRepository.Get( KTactileVibraDurationSensitiveLevel5,  
+                          sensitiveParams.iTime );
+        }
     
     iVibraParams.Reset();
 
-    iVibraParams.Append( basicParams );        
-    iVibraParams.Append( sensitiveParams );         
+    TRAP_IGNORE( iVibraParams.AppendL( basicParams ) );
+    TRAP_IGNORE( iVibraParams.AppendL( sensitiveParams ) );
     TRACE("CTactileVibraPlayer::ReadSettings - End");      
     }    
     

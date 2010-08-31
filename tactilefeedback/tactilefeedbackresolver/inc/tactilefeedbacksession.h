@@ -74,7 +74,7 @@ private:
     void ModifyFeedback( const RMessage2& aMessage );
     
     /**
-     * Stop feedback.
+     * Stop continuous feedback.
      */    
     void StopFeedback( const RMessage2& aMessage );
     

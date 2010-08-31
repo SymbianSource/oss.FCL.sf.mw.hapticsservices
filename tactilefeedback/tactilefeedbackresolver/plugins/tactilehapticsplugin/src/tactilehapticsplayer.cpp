@@ -46,36 +46,39 @@ _LIT8( KTFBasic,                "TFBasic");
 _LIT8( KTFSensitive,            "TFSensitive");
 _LIT8( KTFBasicButton,          "TFBasicButton");
 _LIT8( KTFSensitiveButton,      "TFSensitiveButton");
-_LIT8( KTFList,                 "TFList");
-_LIT8( KTFSensitiveList,        "TFSensitiveList");
-_LIT8( KTFBoundaryList,         "TFBoundaryList");
-_LIT8( KTFSlider,               "TFSlider");
-_LIT8( KTFEdit,                 "TFEdit");
+_LIT8( KTFBasicItem,            "TFBasicItem");             // Mapped to IVT file version 9.2
+_LIT8( KTFSensitiveItem,        "TFSensitiveItem");         // Mapped to IVT file version 9.2
+_LIT8( KTFBounceEffect,         "TFBounceEffect");          // Mapped to IVT file version 9.2
+_LIT8( KTFBasicSlider,          "TFBasicSlider");           // Mapped to IVT file version 9.2
+_LIT8( KTFEditor,               "TFEditor");                // Mapped to IVT file version 9.2
 _LIT8( KTFLineSelection,        "TFLineSelection");
 _LIT8( KTFBlankSelection,       "TFBlankSelection");
 _LIT8( KTFTextSelection,        "TFTextSelection");
 _LIT8( KTFEmptyLineSelection,   "TFEmptyLineSelection");
-_LIT8( KTFTab,                  "TFTab");
 _LIT8( KTFPopUp,                "TFPopUp");
-_LIT8( KTFIncreasingPopUp,      "TFIncreasingPopUp");
-_LIT8( KTFDecreasingPopUp,      "TFDecreasingPopUp");
-_LIT8( KTFFlick,                "TFFlick");
+_LIT8( KTFPopupOpen,            "TFPopupOpen");             // Mapped to IVT file version 9.2
+_LIT8( KTFPopupClose,           "TFPopupClose");            // Mapped to IVT file version 9.2
+_LIT8( KTFItemScroll,           "TFItemScroll");            // Mapped to IVT file version 9.2
 _LIT8( KTFCheckbox,             "TFCheckbox");
-_LIT8( KTFSensitiveInput,       "TFSensitiveInput");
-_LIT8( KTFCharacterInputButton, "TFCharacterInputButton");
-_LIT8( KTFOptionsMenuOpened,    "TFOptionsMenuOpened");
-_LIT8( KTFOptionsMenuClosed,    "TFOptionsMenuClosed");
-_LIT8( KTFSubMenuOpened,        "TFSubMenuOpened");
-_LIT8( KTFSubMenuClosed,        "TFSubMenuClosed");
-_LIT8( KTFLongTap,              "TFLongTap");
-_LIT8( KTFMultiTouchRecognized, "TFMultiTouchRecognized");
+_LIT8( KTFBasicKeypad,          "TFBasicKeypad");           // Mapped to IVT file version 10.1
+_LIT8( KTFSensitiveKeypad,      "TFSensitiveKeypad");       // Mapped to IVT file version 9.2
+_LIT8( KTFMultitouchActivate,   "TFMultitouchActivate");    // Mapped to IVT file version 9.2
+_LIT8( KTFFlick,                "TFFlick");                 // Mapped to IVT file version 10.1
+_LIT8( KTFItemDrop,             "TFItemDrop");              // Mapped to IVT file version 10.1
+_LIT8( KTFItemMoveOver,         "TFItemMoveOver");          // Mapped to IVT file version 10.1
+_LIT8( KTFItemPick,             "TFItemPick");              // Mapped to IVT file version 10.1
+_LIT8( KTFMultipleCheckbox,     "TFMultipleCheckbox");      // Mapped to IVT file version 10.1
+_LIT8( KTFRotateStep,           "TFRotateStep");            // Mapped to IVT file version 10.1
+_LIT8( KTFSensitiveSlider,      "TFSensitiveSlider");       // Mapped to IVT file version 10.1
+_LIT8( KTFStopFlick,            "TFStopFlick");             // Mapped to IVT file version 10.1
+_LIT8( KTFLongPress,              "TFLongPress");               // Mapped to IVT file version 10.1
 
 // Continuous feedback's names
 _LIT8( KTFContinuousSmooth,     "TFContinuousSmooth");
 _LIT8( KTFContinuousSlider,     "TFContinuousSlider");
 _LIT8( KTFContinuousInput,      "TFContinuousInput");
-_LIT8( KTFContinuousFlick,      "TFContinuousFlick");
-_LIT8( KTFDynamicSlider,        "TFDynamicSlider");
+_LIT8( KTFContinuousPopup,      "TFContinuousPopup");       // Mapped to IVT file version 10.1
+_LIT8( KTFContinuousPinch,      "TFContinuousPinch");       // Mapped to IVT file version 10.1
 // ---------------------------------------------------------------------------
 // Constructor.
 // ---------------------------------------------------------------------------
@@ -121,7 +124,7 @@ void CTactileHapticsPlayer::ConstructL()
     // profiles engine
     InitializeProfilesEngineL();
     
-    if ( iVibraLevel > EProfileTactileFeedbackLevel3 )
+    if ( iVibraLevel > EProfileTactileFeedbackLevel5 )
         {
         User::Leave( KErrGeneral );
         }
@@ -232,20 +235,23 @@ void CTactileHapticsPlayer::DoPlayFeedbackL( TTouchLogicalFeedback aFeedback )
         case ETouchFeedbackSensitiveButton:
             name = KTFSensitiveButton;
             break;
-        case ETouchFeedbackList:
-            name = KTFList;
+        case ETouchFeedbackBasicItem:
+            name = KTFBasicItem;
             break;
-        case ETouchFeedbackSensitiveList:
-            name = KTFSensitiveList;
+        case ETouchFeedbackSensitiveItem:
+            name = KTFSensitiveItem;
             break;
-        case ETouchFeedbackBoundaryList:
-            name = KTFBoundaryList;
+        case ETouchFeedbackBasicSlider:
+            name = KTFBasicSlider;
             break;
-        case ETouchFeedbackSlider:
-            name = KTFSlider;
+        case ETouchFeedbackSensitiveSlider:
+            name = KTFSensitiveSlider;
             break;
-        case ETouchFeedbackEdit:
-            name = KTFEdit;
+        case ETouchFeedbackBounceEffect:
+            name = KTFBounceEffect;
+            break;
+        case ETouchFeedbackEditor:
+            name = KTFEditor;
             break;
         case ETouchFeedbackLineSelection:
             name = KTFLineSelection;
@@ -259,47 +265,53 @@ void CTactileHapticsPlayer::DoPlayFeedbackL( TTouchLogicalFeedback aFeedback )
         case ETouchFeedbackEmptyLineSelection:
             name = KTFEmptyLineSelection;
             break;                        
-        case ETouchFeedbackTab:
-            name = KTFTab;
-            break;
         case ETouchFeedbackPopUp:  
             name = KTFPopUp;
             break; 
-       case ETouchFeedbackIncreasingPopUp:
-            name = KTFIncreasingPopUp;
+       case ETouchFeedbackPopupOpen:
+            name = KTFPopupOpen;
             break;     
-        case ETouchFeedbackDecreasingPopUp:
-            name = KTFDecreasingPopUp;
+        case ETouchFeedbackPopupClose:
+            name = KTFPopupClose;
             break;
-        case ETouchFeedbackFlick:
-            name = KTFFlick;
+        case ETouchFeedbackItemScroll:
+            name = KTFItemScroll;
             break;
         case ETouchFeedbackCheckbox:
             name = KTFCheckbox;
             break;
-        case ETouchFeedbackSensitiveInput:
-            name = KTFSensitiveInput;
+        case ETouchFeedbackBasicKeypad:
+            name = KTFBasicKeypad;
             break;
-        case ETouchFeedbackCharacterInputButton:
-            name = KTFCharacterInputButton;
+        case ETouchFeedbackSensitiveKeypad:
+            name = KTFSensitiveKeypad;
             break;
-        case ETouchFeedbackOptionsMenuOpened:
-            name = KTFOptionsMenuOpened;
+        case ETouchFeedbackMultitouchActivate:
+            name = KTFMultitouchActivate;
             break;
-        case ETouchFeedbackOptionsMenuClosed:
-            name = KTFOptionsMenuClosed;
+        case ETouchFeedbackFlick:
+            name = KTFFlick;
             break;
-        case ETouchFeedbackSubMenuOpened:
-            name = KTFSubMenuOpened;
+        case ETouchFeedbackItemDrop:
+            name = KTFItemDrop;
             break;
-        case ETouchFeedbackSubMenuClosed:
-            name = KTFSubMenuClosed;
+        case ETouchFeedbackItemMoveOver:
+            name = KTFItemMoveOver;
             break;
-        case ETouchFeedbackLongTap:
-            name = KTFLongTap;
+        case ETouchFeedbackItemPick:
+            name = KTFItemPick;
             break;
-        case ETouchFeedbackMultiTouchRecognized:
-            name = KTFMultiTouchRecognized;
+        case ETouchFeedbackMultipleCheckbox:
+            name = KTFMultipleCheckbox;
+            break;
+        case ETouchFeedbackRotateStep:
+            name = KTFRotateStep;
+            break;
+        case ETouchFeedbackStopFlick:
+            name = KTFStopFlick;
+            break;
+        case ETouchFeedbackLongPress:
+            name = KTFLongPress;
             break;
         default:
             User::Leave( KErrArgument );
@@ -334,6 +346,12 @@ TUint32 CTactileHapticsPlayer::IVTFileId()
             break;
         case EProfileTactileFeedbackLevel3:
             fileId = KTactileHapticsLevel3IVTFile;
+            break;
+        case EProfileTactileFeedbackLevel4:
+            fileId = KTactileHapticsLevel4IVTFile;
+            break;
+        case EProfileTactileFeedbackLevel5:
+            fileId = KTactileHapticsLevel5IVTFile;
             break;
         }
     return fileId;
@@ -398,12 +416,12 @@ TInt CTactileHapticsPlayer::StartFeedback( TTouchContinuousFeedback aFeedback,
         case ETouchContinuousInput:
             name = KTFContinuousInput;
             break;
-        case ETouchContinuousFlick:
-            name = KTFContinuousFlick;
-            break;    
-        case ETouchDynamicSlider:
-            name = KTFDynamicSlider;
+        case ETouchContinuousPopup:
+            name = KTFContinuousPopup;
             break;
+        case ETouchContinuousPinch:
+            name = KTFContinuousPinch;
+            break;    
         default:
             ret = KErrArgument;
             break;
@@ -581,6 +599,8 @@ void CTactileHapticsPlayer::DoHandleNotifyGenericL( TUint32 aId )
         case KTactileHapticsLevel1IVTFile:
         case KTactileHapticsLevel2IVTFile:
         case KTactileHapticsLevel3IVTFile:
+        case KTactileHapticsLevel4IVTFile:
+        case KTactileHapticsLevel5IVTFile:
             {
             TFileName ivtFile;
             iRepository.Get( aId, ivtFile );

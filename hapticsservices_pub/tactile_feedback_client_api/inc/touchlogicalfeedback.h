@@ -71,29 +71,33 @@ enum TTouchLogicalFeedback
     // New types for S60 5.2:
     ETouchFeedbackBasicButton = 0x100,    
     ETouchFeedbackSensitiveButton,
-    ETouchFeedbackList,
-    ETouchFeedbackSensitiveList,
-    ETouchFeedbackBoundaryList,    
-    ETouchFeedbackSlider,
-    ETouchFeedbackEdit,
+    ETouchFeedbackBasicItem,
+    ETouchFeedbackSensitiveItem,
+    ETouchFeedbackBounceEffect,    
+    ETouchFeedbackBasicSlider,
+    ETouchFeedbackEditor,
     ETouchFeedbackLineSelection,
     ETouchFeedbackBlankSelection,
     ETouchFeedbackTextSelection,
-    ETouchFeedbackEmptyLineSelection,
-    ETouchFeedbackTab,
+    ETouchFeedbackEmptyLineSelection,    
     ETouchFeedbackPopUp,
-    ETouchFeedbackIncreasingPopUp,
-    ETouchFeedbackDecreasingPopUp,
-    ETouchFeedbackFlick,
+    ETouchFeedbackPopupOpen,
+    ETouchFeedbackPopupClose,
+    ETouchFeedbackItemScroll,
     ETouchFeedbackCheckbox,
-    ETouchFeedbackSensitiveInput,
-    ETouchFeedbackCharacterInputButton,
-    ETouchFeedbackOptionsMenuOpened,
-    ETouchFeedbackOptionsMenuClosed,
-    ETouchFeedbackSubMenuOpened,
-    ETouchFeedbackSubMenuClosed,
-    ETouchFeedbackLongTap,
-    ETouchFeedbackMultiTouchRecognized
+    ETouchFeedbackSensitiveKeypad,    
+    ETouchFeedbackMultitouchActivate,
+    // New types for 10.1:
+    ETouchFeedbackBasicKeypad,
+    ETouchFeedbackFlick,
+    ETouchFeedbackItemDrop,
+    ETouchFeedbackItemMoveOver,
+    ETouchFeedbackItemPick,
+    ETouchFeedbackMultipleCheckbox,
+    ETouchFeedbackRotateStep,
+    ETouchFeedbackSensitiveSlider,
+    ETouchFeedbackStopFlick,
+    ETouchFeedbackLongPress
     };
     
 /**  
@@ -105,8 +109,8 @@ enum TTouchContinuousFeedback
     ETouchContinuousSmooth = 0x300, // For generic continuous feedback for custom controls
     ETouchContinuousSlider,
     ETouchContinuousInput,
-    ETouchContinuousFlick,
-    ETouchDynamicSlider
+    ETouchContinuousPopup,
+    ETouchContinuousPinch
     };
     
 /**  

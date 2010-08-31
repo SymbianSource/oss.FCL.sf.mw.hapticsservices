@@ -134,33 +134,36 @@ TInt CTactileAudioPlayer::PlayFeedback( TTouchLogicalFeedback aFeedback )
         {
         case ETouchFeedbackBasic:               // flow through
         case ETouchFeedbackBasicButton:         // flow through
-        case ETouchFeedbackList:                // flow through
-        case ETouchFeedbackBoundaryList:        // flow through
-        case ETouchFeedbackSlider:              // flow through
-        case ETouchFeedbackEdit:                // flow through
+        case ETouchFeedbackBasicItem:           // flow through
+        case ETouchFeedbackBounceEffect:        // flow through
+        case ETouchFeedbackBasicSlider:         // flow through
+        case ETouchFeedbackEditor:              // flow through
         case ETouchFeedbackLineSelection:       // flow through
         case ETouchFeedbackBlankSelection:      // flow through
         case ETouchFeedbackTextSelection:       // flow through
         case ETouchFeedbackEmptyLineSelection:  // flow through
-        case ETouchFeedbackTab:                 // flow through
         case ETouchFeedbackPopUp:               // flow through
-        case ETouchFeedbackIncreasingPopUp:     // flow through
-        case ETouchFeedbackDecreasingPopUp:     // flow through
-        case ETouchFeedbackFlick:               // flow through
+        case ETouchFeedbackPopupOpen:           // flow through
+        case ETouchFeedbackPopupClose:          // flow through
+        case ETouchFeedbackItemScroll:          // flow through
         case ETouchFeedbackCheckbox:            // flow through
-        case ETouchFeedbackCharacterInputButton:
-        case ETouchFeedbackOptionsMenuOpened:
-        case ETouchFeedbackOptionsMenuClosed:
-        case ETouchFeedbackSubMenuOpened:
-        case ETouchFeedbackSubMenuClosed:
-        case ETouchFeedbackLongTap:
-        case ETouchFeedbackMultiTouchRecognized:
+        case ETouchFeedbackMultitouchActivate:
+        case ETouchFeedbackBasicKeypad:
+        case ETouchFeedbackFlick:
+        case ETouchFeedbackItemDrop:
+        case ETouchFeedbackItemMoveOver:
+        case ETouchFeedbackItemPick:
+        case ETouchFeedbackMultipleCheckbox:
+        case ETouchFeedbackRotateStep:
+        case ETouchFeedbackStopFlick:
+        case ETouchFeedbackLongPress:
             volumeIndex = 0;
             break;
         case ETouchFeedbackSensitive:           // flow through
         case ETouchFeedbackSensitiveButton:     // flow through
-        case ETouchFeedbackSensitiveList:      
-        case ETouchFeedbackSensitiveInput:
+        case ETouchFeedbackSensitiveItem:      
+        case ETouchFeedbackSensitiveKeypad:
+        case ETouchFeedbackSensitiveSlider:
             volumeIndex = 1;
             break;
         default:
@@ -344,10 +347,9 @@ void CTactileAudioPlayer::ReadSettingsL()
     iRepository.Get( KTactileAudioWavFileBasicLevel2, basicFileName );
 
     iRepository.Get( KTactileAudioWavFileSensitiveLevel2, sensitiveFileName );
-    
-    iVolumeLevels.Append( basicVolumeLevel );
-    iVolumeLevels.Append( sensitiveVolumeLevel );
-    
+    iVolumeLevels.AppendL( basicVolumeLevel );
+    iVolumeLevels.AppendL( sensitiveVolumeLevel );
+
     TRACE("CTactileAudioPlayer::ReadSettingsL() - End");
     }
 

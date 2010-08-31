@@ -159,7 +159,7 @@ public:
     IMPORT_C virtual TInt ModifyFeedback( TInt aIntensity );
     
     /**
-     * Stops feedback.
+     * Stops continuous feedback.
      *
      * @since S60 5.2
      */    

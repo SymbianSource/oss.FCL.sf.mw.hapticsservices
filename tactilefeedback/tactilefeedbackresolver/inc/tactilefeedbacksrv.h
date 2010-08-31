@@ -135,7 +135,7 @@ public:
     void ModifyFeedback( TInt aIntensity );
     
     /**
-     * Stop feedback.
+     * Stop continuous feedback.
      */    
     void StopFeedback();
     
