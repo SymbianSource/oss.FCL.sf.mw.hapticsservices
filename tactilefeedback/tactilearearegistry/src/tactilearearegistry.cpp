@@ -172,7 +172,6 @@ EXPORT_C void CTactileAreaRegistry::HandleDisconnect(
             break;
             }
         }  
-    
     iTactileSemaphore.Signal();
     }
     
@@ -194,8 +193,8 @@ EXPORT_C void CTactileAreaRegistry::HandleWindowGroupCreated(
     
     newItem.iWindowGroupId    = aIdentifier;
     newItem.iConnectionHandle = aConnectionHandle;
-    // if append fail just make its action like before
-    TRAP_IGNORE( iWgArray.AppendL( newItem ) );
+    
+    iWgArray.Append( newItem );
     }
     
     

@@ -755,8 +755,8 @@ void CTouchFeedbackImpl::EnableFeedbackForControl(
                 newCacheEntry.iAudioDisabled  = !aEnableAudio;
                 newCacheEntry.iVisible        = aControl->IsVisible();
                 newCacheEntry.iDimmed         = aControl->IsDimmed();
-                // if append fail just make its action like before
-                TRAP_IGNORE( iControlCache.AppendL( newCacheEntry ) );
+                        
+                iControlCache.Append( newCacheEntry );                        
                 }
             }        
         }
@@ -973,7 +973,7 @@ void CTouchFeedbackImpl::StartFeedback( const CCoeControl* aControl,
             
         if ( vibraEnabled || audioEnabled )
             {
-            TRACE4("CTouchFeedbackImpl::StartFeedback, type:=%d intensity:%d, timeout:%d", aType, aIntensity, aTimeout);
+            TRACE4("CTouchFeedbackImpl::StartFeedback, type:=%d intensity:%d, timeout:%d", aType, aIntensity, aTimeout.Int());
             TUint32 clientHandle = ClientHandle( aControl );
             iClient->StartFeedback( clientHandle, 
                                     aType, 
@@ -1145,35 +1145,6 @@ void CTouchFeedbackImpl::InstantFeedback( const CCoeControl* aControl,
         }
     }
         
-// ---------------------------------------------------------------------------
-// CTouchFeedbackImpl::InstantFeedback
-// ---------------------------------------------------------------------------
-//    
-void CTouchFeedbackImpl::InstantFeedback( TTouchLogicalFeedback aType,
-                                          TTouchFeedbackType aFeedbackType )
-    {
-    if ( iClient && ( iAudioEnabledForThisApp || iVibraEnabledForThisApp ) )
-        {
-        // Initialize vibra and audio enablers as given in param.
-        TBool vibraEnabled = aFeedbackType & ETouchFeedbackVibra;
-        TBool audioEnabled = aFeedbackType & ETouchFeedbackAudio;
-
-        // Check application level vibra and audio enablers
-        if ( !iVibraEnabledForThisApp )
-            {
-            vibraEnabled = EFalse;
-            }
-        if ( !iAudioEnabledForThisApp )
-            {
-            audioEnabled = EFalse;
-            }
-
-        TRACE4( "CTouchFeedbackImpl::InstantFeedback, type:=%d Vibra:%d Audio:%d",
-                aType, vibraEnabled, audioEnabled );
-        iClient->ImmediateFeedback( aType, vibraEnabled, audioEnabled );
-        }
-    }
-
 // ---------------------------------------------------------------------------
 // Here we do the actual work for adding new area to the registry
 // (or updating an existing one).
@@ -1760,15 +1731,15 @@ EXPORT_C TInt CFeedbackSpec::AddFeedback( TTouchEventType aEventType,
     
 	// range check. update when logical feedback types are changed.
     if ( !(aFeedback >= ETouchFeedbackNone && aFeedback <= ETouchFeedbackSensitive) 
-            && !(aFeedback >= ETouchFeedbackBasicButton && aFeedback <= ETouchFeedbackLongPress) )
+            && !(aFeedback >= ETouchFeedbackBasicButton && aFeedback <= ETouchFeedbackMultiTouchRecognized) )
         {
         return KErrArgument;
         }
     item.iFeedback = aFeedback;        
     item.iFeedbackType = aFeedbackType;
         
-    TInt err = iFbArray.Append(item);
-    return err;
+    iFbArray.Append(item);
+    return KErrNone;
     }    
 
 // ---------------------------------------------------------------------------
@@ -1787,8 +1758,7 @@ void CFeedbackSpec::GetFeedbackSpec( RArray<TTactileFbItem>& aArray )
         item.iFeedback  = iFbArray[i].iFeedback;
         item.iEventType = iFbArray[i].iEventType;
         item.iFeedbackType = iFbArray[i].iFeedbackType;
-        // if append fail just make its action like before
-        TRAP_IGNORE( aArray.AppendL( item ) );
+        aArray.Append(item);
         }
     }
 

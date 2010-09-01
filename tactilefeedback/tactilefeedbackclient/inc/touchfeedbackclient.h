@@ -120,11 +120,11 @@ public:
                          TInt aIntensity );
     
     /**
-     * Stops the continuous feedback.
+     * Stops the feedback.
      *
      * @since S60 5.2     
      * @param aClientHandle - Handle of a client to check if caller started
-     *                        the playing continuous feedback. 
+     *                        the playing feedback. 
      */                                
     void StopFeedback( TUint32 aClientHandle );  
 

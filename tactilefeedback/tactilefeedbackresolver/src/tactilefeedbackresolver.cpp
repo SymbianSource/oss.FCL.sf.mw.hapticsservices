@@ -23,7 +23,6 @@
 
 #include <centralrepository.h>
 #include <ecom/implementationinformation.h>
-#include <ProfileEngineInternalCRKeys.h>
 
 #include "tactilefeedbackprivatecrkeys.h"
 #include "tactilefeedbackinternalpskeys.h"
@@ -104,7 +103,6 @@ CTactileFeedbackResolver::~CTactileFeedbackResolver()
     {
     delete iCenRepNotifier;
     delete iRepository;
-    delete iProfileRepository;
     delete iPropertyWatcher;
     delete iHapticsPlayer;
     delete iAudioPlayer;
@@ -114,21 +112,25 @@ CTactileFeedbackResolver::~CTactileFeedbackResolver()
 TBool CTactileFeedbackResolver::IsHigherThanPlaying(
     TTouchLogicalFeedback aFeedback ) const
     {
-    if( aFeedback == ETouchFeedbackBasicItem &&
-        iLastFeedback == ETouchFeedbackSensitiveItem )
+    if( aFeedback == ETouchFeedbackList &&
+        iLastFeedback == ETouchFeedbackSensitiveList )
         {
         return ETrue;
         }
     
-    return ( aFeedback == ETouchFeedbackPopUp || 
-            aFeedback == ETouchFeedbackPopupOpen || 
-            aFeedback == ETouchFeedbackPopupClose ||
-            aFeedback == ETouchFeedbackBounceEffect ) &&
+    return ( ( aFeedback == ETouchFeedbackPopUp || 
+            aFeedback == ETouchFeedbackIncreasingPopUp || 
+            aFeedback == ETouchFeedbackDecreasingPopUp ||
+            aFeedback == ETouchFeedbackBoundaryList ||
+            aFeedback == ETouchFeedbackOptionsMenuOpened ||
+            aFeedback == ETouchFeedbackOptionsMenuClosed ||
+            aFeedback == ETouchFeedbackSubMenuOpened ||
+            aFeedback == ETouchFeedbackSubMenuClosed ) &&
             ( iLastFeedback == ETouchFeedbackBasicButton ||
             iLastFeedback == ETouchFeedbackSensitiveButton ||
-            iLastFeedback == ETouchFeedbackSensitiveItem ||
-            iLastFeedback == ETouchFeedbackBasicItem ||
-            iLastFeedback == ETouchFeedbackCheckbox );
+            iLastFeedback == ETouchFeedbackSensitiveList ||
+            iLastFeedback == ETouchFeedbackList ||
+            iLastFeedback == ETouchFeedbackCheckbox ) );
     }
 
 // ---------------------------------------------------------------------------
@@ -145,14 +147,6 @@ void CTactileFeedbackResolver::PlayFeedback(
     TBool aPlayAudio )
     {
     // TRACE("CTactileFeedbackResolver::PlayFeedback - Begin");
-    
-    // A temporary solution to change effect of ETouchFeedbackSensitiveSlider,
-    // it will be removed when the IVT files is ready.
-    if( ETouchFeedbackSensitiveSlider == aFeedback )
-        {
-        aFeedback = ETouchFeedbackBasicSlider;
-        }
-
     // Feedback filtering in order to prevent too many feedbacks
     // in a short time (e.g. when doing text selection).    
     TTime now;
@@ -196,16 +190,6 @@ void CTactileFeedbackResolver::PlayFeedback(
             aPlayAudio = EFalse;
             }
         
-        // check silent mode, if device is in silent mode, 
-        // audio feedback is not allowed.
-        TInt err;
-        TInt isAudioSupported;
-        err = iProfileRepository->Get( KProEngSilenceMode, isAudioSupported );
-        if ( KErrNone == err && 1 == isAudioSupported )
-            {
-            aPlayAudio = EFalse;
-            }
-
         if ( ( aPlayVibra || aPlayAudio ) &&        // #1
                aFeedback != ETouchFeedbackNone )    // #2
             {
@@ -250,12 +234,7 @@ void CTactileFeedbackResolver::InitializeCrKeysL()
     if ( !iRepository )
         {
         iRepository = CRepository::NewL( KCRUidTactileFeedback );    
-        }
-
-    if ( !iProfileRepository )
-        {
-        iProfileRepository = CRepository::NewL( KCRUidProfileEngine );
-        }
+        }    
     
     TInt minInterval(0);
     // Read and store minimun feedback interfal
@@ -390,7 +369,7 @@ void CTactileFeedbackResolver::ModifyFeedback( TInt aIntensity )
     }
     
 // ---------------------------------------------------------------------------
-// Stop continuous feedback.
+// Stop feedback.
 // ---------------------------------------------------------------------------
 //    
 void CTactileFeedbackResolver::StopFeedback()
@@ -410,13 +389,6 @@ void CTactileFeedbackResolver::PlayPreviewFeedback( TInt aLevel,
                           TTouchLogicalFeedback aFeedback,
                           TTouchFeedbackType aType )
     {
-    // A temporary solution to change effect of ETouchFeedbackSensitiveSlider,
-    // it will be removed when the IVT files is ready.
-    if( ETouchFeedbackSensitiveSlider == aFeedback )
-        {
-        aFeedback = ETouchFeedbackBasicSlider;
-        }
-    
     if ( aType & ETouchFeedbackVibra && iHapticsPlayer )
         {
         iHapticsPlayer->PlayPreviewFeedback( aLevel, aFeedback );

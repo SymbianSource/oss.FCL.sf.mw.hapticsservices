@@ -90,30 +90,6 @@ const TUint32 KTactileVibraIntensityBasicLevel2      = 0x00000021;
 const TUint32 KTactileVibraIntensityBasicLevel3      = 0x00000022;
 
 /**
-* Vibra intensity setting for logical feedback type ETouchFeedbackBasic
-* and vibra effect level ETactileFeedbackVibraLevel4.
-*
-* Possible values are:
-* Integers from 0 to 100. See HWRMVibra.h for more information.
-* Zero intensity will disable this logical feedback type.
-*
-* Default value: 60
-**/
-const TUint32 KTactileVibraIntensityBasicLevel4      = 0x00000023;
-
-/**
-* Vibra intensity setting for logical feedback type ETouchFeedbackBasic
-* and vibra effect level ETactileFeedbackVibraLevel5.
-*
-* Possible values are:
-* Integers from 0 to 100. See HWRMVibra.h for more information.
-* Zero intensity will disable this logical feedback type.
-*
-* Default value: 80
-**/
-const TUint32 KTactileVibraIntensityBasicLevel5      = 0x00000024;
-
-/**
 * Vibra duration setting for logical feedback type ETouchFeedbackBasic
 * and vibra effect level ETactileFeedbackVibraLevel1.
 *
@@ -125,7 +101,7 @@ const TUint32 KTactileVibraIntensityBasicLevel5      = 0x00000024;
 *
 * Default value: 15
 **/
-const TUint32 KTactileVibraDurationBasicLevel1       = 0x00000025;
+const TUint32 KTactileVibraDurationBasicLevel1       = 0x00000023;
 
 /**
 * Vibra duration setting for logical feedback type ETouchFeedbackBasic
@@ -139,7 +115,7 @@ const TUint32 KTactileVibraDurationBasicLevel1       = 0x00000025;
 *
 * Default value: 20
 **/
-const TUint32 KTactileVibraDurationBasicLevel2       = 0x00000026;
+const TUint32 KTactileVibraDurationBasicLevel2       = 0x00000024;
 
 /**
 * Vibra duration setting for logical feedback type ETouchFeedbackBasic
@@ -153,35 +129,7 @@ const TUint32 KTactileVibraDurationBasicLevel2       = 0x00000026;
 *
 * Default value: 30
 **/
-const TUint32 KTactileVibraDurationBasicLevel3       = 0x00000027;
-
-/**
-* Vibra duration setting for logical feedback type ETouchFeedbackBasic
-* and vibra effect level ETactileFeedbackVibraLevel4.
-*
-* Duration is given in milliseconds, and zero value will disable this
-* logical feedback type. 
-*
-* Possible values are:
-* Integer values from zero upwards.
-*
-* Default value: 40
-**/
-const TUint32 KTactileVibraDurationBasicLevel4       = 0x00000028;
-
-/**
-* Vibra duration setting for logical feedback type ETouchFeedbackBasic
-* and vibra effect level ETactileFeedbackVibraLevel5.
-*
-* Duration is given in milliseconds, and zero value will disable this
-* logical feedback type. 
-*
-* Possible values are:
-* Integer values from zero upwards.
-*
-* Default value: 50
-**/
-const TUint32 KTactileVibraDurationBasicLevel5       = 0x00000029;
+const TUint32 KTactileVibraDurationBasicLevel3       = 0x00000025;
 
 
 /**
@@ -194,7 +142,7 @@ const TUint32 KTactileVibraDurationBasicLevel5       = 0x00000029;
 *
 * Default value: 50
 **/
-const TUint32 KTactileVibraIntensitySensitiveLevel1  = 0x0000002a;
+const TUint32 KTactileVibraIntensitySensitiveLevel1  = 0x00000026;
 
 /**
 * Vibra intensity setting for logical feedback type ETouchFeedbackSensitive
@@ -206,7 +154,7 @@ const TUint32 KTactileVibraIntensitySensitiveLevel1  = 0x0000002a;
 *
 * Default value: 100
 **/
-const TUint32 KTactileVibraIntensitySensitiveLevel2  = 0x0000002b;
+const TUint32 KTactileVibraIntensitySensitiveLevel2  = 0x00000027;
 
 /**
 * Vibra intensity setting for logical feedback type ETouchFeedbackSensitive
@@ -218,31 +166,7 @@ const TUint32 KTactileVibraIntensitySensitiveLevel2  = 0x0000002b;
 *
 * Default value: 10
 **/
-const TUint32 KTactileVibraIntensitySensitiveLevel3  = 0x0000002c;
-
-/**
-* Vibra intensity setting for logical feedback type ETouchFeedbackSensitive
-* and vibra effect level ETactileFeedbackVibraLevel4.
-*
-* Possible values are:
-* Integers from 0 to 100. See HWRMVibra.h for more information.
-* Zero intensity will disable this logical feedback type.
-*
-* Default value: 10
-**/
-const TUint32 KTactileVibraIntensitySensitiveLevel4  = 0x0000002d;
-
-/**
-* Vibra intensity setting for logical feedback type ETouchFeedbackSensitive
-* and vibra effect level ETactileFeedbackVibraLevel5.
-*
-* Possible values are:
-* Integers from 0 to 100. See HWRMVibra.h for more information.
-* Zero intensity will disable this logical feedback type.
-*
-* Default value: 10
-**/
-const TUint32 KTactileVibraIntensitySensitiveLevel5  = 0x0000002e;
+const TUint32 KTactileVibraIntensitySensitiveLevel3  = 0x00000028;
 
 
 /**
@@ -257,7 +181,7 @@ const TUint32 KTactileVibraIntensitySensitiveLevel5  = 0x0000002e;
 *
 * Default value: 5
 **/
-const TUint32 KTactileVibraDurationSensitiveLevel1  = 0x0000002f;
+const TUint32 KTactileVibraDurationSensitiveLevel1  = 0x00000029;
 
 /**
 * Vibra duration setting for logical feedback type ETouchFeedbackSensitive
@@ -271,7 +195,7 @@ const TUint32 KTactileVibraDurationSensitiveLevel1  = 0x0000002f;
 *
 * Default value: 10
 **/
-const TUint32 KTactileVibraDurationSensitiveLevel2  = 0x00000030;
+const TUint32 KTactileVibraDurationSensitiveLevel2  = 0x0000002a;
 
 /**
 * Vibra duration setting for logical feedback type ETouchFeedbackSensitive
@@ -285,35 +209,7 @@ const TUint32 KTactileVibraDurationSensitiveLevel2  = 0x00000030;
 *
 * Default value: 15
 **/
-const TUint32 KTactileVibraDurationSensitiveLevel3  = 0x00000031;
-
-/**
-* Vibra duration setting for logical feedback type ETouchFeedbackSensitive
-* and vibra effect level ETactileFeedbackVibraLevel4.
-*
-* Duration is given in milliseconds, and zero value will disable this
-* logical feedback type. 
-*
-* Possible values are:
-* Integer values from zero upwards.
-*
-* Default value: 20
-**/
-const TUint32 KTactileVibraDurationSensitiveLevel4  = 0x00000032;
-
-/**
-* Vibra duration setting for logical feedback type ETouchFeedbackSensitive
-* and vibra effect level ETactileFeedbackVibraLevel5.
-*
-* Duration is given in milliseconds, and zero value will disable this
-* logical feedback type. 
-*
-* Possible values are:
-* Integer values from zero upwards.
-*
-* Default value: 25
-**/
-const TUint32 KTactileVibraDurationSensitiveLevel5  = 0x00000033;
+const TUint32 KTactileVibraDurationSensitiveLevel3  = 0x0000002b;
 
 
 
@@ -363,32 +259,6 @@ const TUint32 KTactileAudioToneFreqBasicLevel2      = 0x00000041;
 const TUint32 KTactileAudioToneFreqBasicLevel3      = 0x00000042;
 
 /**
-* Audio frequency setting for logical feedback type ETouchFeedbackBasic
-* and audio effect level ETactileFeedbackAudioLevel4.
-*
-* Frequency is given in Hz.
-*
-* Possible values are:
-* Positive integer values.
-*
-* Default value: 1100
-**/
-const TUint32 KTactileAudioToneFreqBasicLevel4      = 0x00000043;
-
-/**
-* Audio frequency setting for logical feedback type ETouchFeedbackBasic
-* and audio effect level ETactileFeedbackAudioLevel5.
-*
-* Frequency is given in Hz.
-*
-* Possible values are:
-* Positive integer values.
-*
-* Default value: 1100
-**/
-const TUint32 KTactileAudioToneFreqBasicLevel5      = 0x00000044;
-
-/**
 * Audio duration setting for logical feedback type ETouchFeedbackBasic
 * and audio effect level ETactileFeedbackAudioLevel1.
 *
@@ -399,7 +269,7 @@ const TUint32 KTactileAudioToneFreqBasicLevel5      = 0x00000044;
 *
 * Default value: 10
 **/
-const TUint32 KTactileAudioToneDurationBasicLevel1  = 0x00000045;
+const TUint32 KTactileAudioToneDurationBasicLevel1  = 0x00000043;
 
 /**
 * Audio duration setting for logical feedback type ETouchFeedbackBasic
@@ -412,7 +282,7 @@ const TUint32 KTactileAudioToneDurationBasicLevel1  = 0x00000045;
 *
 * Default value: 10
 **/
-const TUint32 KTactileAudioToneDurationBasicLevel2  = 0x00000046;
+const TUint32 KTactileAudioToneDurationBasicLevel2  = 0x00000044;
 
 /**
 * Audio duration setting for logical feedback type ETouchFeedbackBasic
@@ -425,33 +295,7 @@ const TUint32 KTactileAudioToneDurationBasicLevel2  = 0x00000046;
 *
 * Default value: 10
 **/
-const TUint32 KTactileAudioToneDurationBasicLevel3  = 0x00000047;
-
-/**
-* Audio duration setting for logical feedback type ETouchFeedbackBasic
-* and audio effect level ETactileFeedbackAudioLevel4.
-*
-* Duration is given in milliseconds.
-*
-* Possible values are:
-* Zero (disables this feedback type) or positive integers
-*
-* Default value: 10
-**/
-const TUint32 KTactileAudioToneDurationBasicLevel4  = 0x00000048;
-
-/**
-* Audio duration setting for logical feedback type ETouchFeedbackBasic
-* and audio effect level ETactileFeedbackAudioLevel5.
-*
-* Duration is given in milliseconds.
-*
-* Possible values are:
-* Zero (disables this feedback type) or positive integers
-*
-* Default value: 10
-**/
-const TUint32 KTactileAudioToneDurationBasicLevel5  = 0x00000049;
+const TUint32 KTactileAudioToneDurationBasicLevel3  = 0x00000045;
 
 /**
 * Audio volume setting for logical feedback type ETouchFeedbackBasic
@@ -465,7 +309,7 @@ const TUint32 KTactileAudioToneDurationBasicLevel5  = 0x00000049;
 *
 * Default value: 20
 **/
-const TUint32 KTactileAudioToneVolumeBasicLevel1    = 0x0000004a;
+const TUint32 KTactileAudioToneVolumeBasicLevel1    = 0x00000046;
 
 /**
 * Audio volume setting for logical feedback type ETouchFeedbackBasic
@@ -479,7 +323,7 @@ const TUint32 KTactileAudioToneVolumeBasicLevel1    = 0x0000004a;
 *
 * Default value: 40
 **/
-const TUint32 KTactileAudioToneVolumeBasicLevel2    = 0x0000004b;
+const TUint32 KTactileAudioToneVolumeBasicLevel2    = 0x00000047;
 
 /**
 * Audio volume setting for logical feedback type ETouchFeedbackBasic
@@ -493,35 +337,7 @@ const TUint32 KTactileAudioToneVolumeBasicLevel2    = 0x0000004b;
 *
 * Default value: 60
 **/
-const TUint32 KTactileAudioToneVolumeBasicLevel3    = 0x0000004c;
-
-/**
-* Audio volume setting for logical feedback type ETouchFeedbackBasic
-* and audio effect level ETactileFeedbackAudioLevel4.
-*
-* Volume level is given in percentages. 100% equals to 
-* CMdaAudioToneUtility::MaxVolume, and 0% will disable this feedback type.
-*
-* Possible values are:
-* 0 - 100 
-*
-* Default value: 80
-**/
-const TUint32 KTactileAudioToneVolumeBasicLevel4    = 0x0000004d;
-
-/**
-* Audio volume setting for logical feedback type ETouchFeedbackBasic
-* and audio effect level ETactileFeedbackAudioLevel5.
-*
-* Volume level is given in percentages. 100% equals to 
-* CMdaAudioToneUtility::MaxVolume, and 0% will disable this feedback type.
-*
-* Possible values are:
-* 0 - 100 
-*
-* Default value: 100
-**/
-const TUint32 KTactileAudioToneVolumeBasicLevel5    = 0x0000004e;
+const TUint32 KTactileAudioToneVolumeBasicLevel3    = 0x00000048;
 
 
 /**
@@ -535,7 +351,7 @@ const TUint32 KTactileAudioToneVolumeBasicLevel5    = 0x0000004e;
 *
 * Default value: 1100
 **/
-const TUint32 KTactileAudioToneFreqSensitiveLevel1  = 0x0000004f;
+const TUint32 KTactileAudioToneFreqSensitiveLevel1  = 0x00000049;
 
 /**
 * Audio frequency setting for logical feedback type ETouchFeedbackSensitive
@@ -548,7 +364,7 @@ const TUint32 KTactileAudioToneFreqSensitiveLevel1  = 0x0000004f;
 *
 * Default value: 1100
 **/
-const TUint32 KTactileAudioToneFreqSensitiveLevel2  = 0x00000050;
+const TUint32 KTactileAudioToneFreqSensitiveLevel2  = 0x0000004a;
 
 /**
 * Audio frequency setting for logical feedback type ETouchFeedbackSensitive
@@ -561,33 +377,7 @@ const TUint32 KTactileAudioToneFreqSensitiveLevel2  = 0x00000050;
 *
 * Default value: 1100
 **/
-const TUint32 KTactileAudioToneFreqSensitiveLevel3  = 0x00000051;
-
-/**
-* Audio frequency setting for logical feedback type ETouchFeedbackSensitive
-* and audio effect level ETactileFeedbackAudioLevel4.
-*
-* Frequency is given in Hz.
-*
-* Possible values are:
-* Positive integer values.
-*
-* Default value: 1100
-**/
-const TUint32 KTactileAudioToneFreqSensitiveLevel4  = 0x00000052;
-
-/**
-* Audio frequency setting for logical feedback type ETouchFeedbackSensitive
-* and audio effect level ETactileFeedbackAudioLevel5.
-*
-* Frequency is given in Hz.
-*
-* Possible values are:
-* Positive integer values.
-*
-* Default value: 1100
-**/
-const TUint32 KTactileAudioToneFreqSensitiveLevel5  = 0x00000053;
+const TUint32 KTactileAudioToneFreqSensitiveLevel3  = 0x0000004b;
 
 
 /**
@@ -601,7 +391,7 @@ const TUint32 KTactileAudioToneFreqSensitiveLevel5  = 0x00000053;
 *
 * Default value: 10
 **/
-const TUint32 KTactileAudioToneDurationSensitiveLevel1 = 0x00000054;
+const TUint32 KTactileAudioToneDurationSensitiveLevel1 = 0x0000004c;
 
 /**
 * Audio duration setting for logical feedback type ETouchFeedbackSensitive
@@ -614,7 +404,7 @@ const TUint32 KTactileAudioToneDurationSensitiveLevel1 = 0x00000054;
 *
 * Default value: 10
 **/
-const TUint32 KTactileAudioToneDurationSensitiveLevel2 = 0x00000055;
+const TUint32 KTactileAudioToneDurationSensitiveLevel2 = 0x0000004d;
 
 /**
 * Audio duration setting for logical feedback type ETouchFeedbackSensitive
@@ -627,33 +417,7 @@ const TUint32 KTactileAudioToneDurationSensitiveLevel2 = 0x00000055;
 *
 * Default value: 10
 **/
-const TUint32 KTactileAudioToneDurationSensitiveLevel3 = 0x00000056;
-
-/**
-* Audio duration setting for logical feedback type ETouchFeedbackSensitive
-* and audio effect level ETactileFeedbackAudioLevel4.
-*
-* Duration is given in milliseconds.
-*
-* Possible values are:
-* Zero (disables this feedback type) or positive integers
-*
-* Default value: 10
-**/
-const TUint32 KTactileAudioToneDurationSensitiveLevel4 = 0x00000057;
-
-/**
-* Audio duration setting for logical feedback type ETouchFeedbackSensitive
-* and audio effect level ETactileFeedbackAudioLevel5.
-*
-* Duration is given in milliseconds.
-*
-* Possible values are:
-* Zero (disables this feedback type) or positive integers
-*
-* Default value: 10
-**/
-const TUint32 KTactileAudioToneDurationSensitiveLevel5 = 0x00000058;
+const TUint32 KTactileAudioToneDurationSensitiveLevel3 = 0x0000004e;
 
 /**
 * Audio volume setting for logical feedback type ETouchFeedbackSensitive
@@ -667,7 +431,7 @@ const TUint32 KTactileAudioToneDurationSensitiveLevel5 = 0x00000058;
 *
 * Default value: 10
 **/
-const TUint32 KTactileAudioToneVolumeSensitiveLevel1   = 0x00000059;
+const TUint32 KTactileAudioToneVolumeSensitiveLevel1   = 0x0000004f;
 
 /**
 * Audio volume setting for logical feedback type ETouchFeedbackSensitive
@@ -681,7 +445,7 @@ const TUint32 KTactileAudioToneVolumeSensitiveLevel1   = 0x00000059;
 *
 * Default value: 25
 **/
-const TUint32 KTactileAudioToneVolumeSensitiveLevel2   = 0x0000005a;
+const TUint32 KTactileAudioToneVolumeSensitiveLevel2   = 0x00000050;
 
 /**
 * Audio volume setting for logical feedback type ETouchFeedbackSensitive
@@ -695,35 +459,7 @@ const TUint32 KTactileAudioToneVolumeSensitiveLevel2   = 0x0000005a;
 *
 * Default value: 40
 **/
-const TUint32 KTactileAudioToneVolumeSensitiveLevel3   = 0x0000005b;
-
-/**
-* Audio volume setting for logical feedback type ETouchFeedbackSensitive
-* and audio effect level ETactileFeedbackAudioLevel4.
-*
-* Volume level is given in percentages. 100% equals to 
-* CMdaAudioToneUtility::MaxVolume, and 0% will disable this feedback type.
-*
-* Possible values are:
-* 0 - 100
-*
-* Default value: 55
-**/
-const TUint32 KTactileAudioToneVolumeSensitiveLevel4   = 0x0000005c;
-
-/**
-* Audio volume setting for logical feedback type ETouchFeedbackSensitive
-* and audio effect level ETactileFeedbackAudioLevel5.
-*
-* Volume level is given in percentages. 100% equals to 
-* CMdaAudioToneUtility::MaxVolume, and 0% will disable this feedback type.
-*
-* Possible values are:
-* 0 - 100
-*
-* Default value: 70
-**/
-const TUint32 KTactileAudioToneVolumeSensitiveLevel5   = 0x0000005d;
+const TUint32 KTactileAudioToneVolumeSensitiveLevel3   = 0x00000051;
 
 // =============================================================================
 // Configuration options related to audio .wav feedback

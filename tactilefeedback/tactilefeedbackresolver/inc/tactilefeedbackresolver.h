@@ -87,7 +87,7 @@ public:
     void ModifyFeedback( TInt aIntensity );
     
     /**
-     * Stops the ongoing continuous feedback.
+     * Stops the ongoing feedback.
      *
      * @since S60 5.2
      */    
@@ -242,12 +242,6 @@ private: // data
      * Own.
      */
     CRepository*          iRepository;
-    
-    /**
-     * Central repository for reading profile settings.
-     * Own.
-     */
-    CRepository*          iProfileRepository;
     
     /**
      * Central repository notifier, which sends notification when tactile 
