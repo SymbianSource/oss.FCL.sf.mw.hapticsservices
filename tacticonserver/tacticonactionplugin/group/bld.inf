@@ -26,10 +26,10 @@ PRJ_EXPORTS
 ../rom/tacticonactionplugin.iby  CORE_IBY_EXPORT_PATH(mw, tacticonactionplugin.iby)
 
 ../data/tacticon.rul\
-    /epoc32/RELEASE/winscw/UDEB/Z/private/10282BC4/Rules/tacticon.rul
+    /epoc32/release/winscw/udeb/z/private/10282BC4/Rules/tacticon.rul
 
 ../data/tacticon.rul\
-    /epoc32/data/Z/private/10282BC4/Rules/tacticon.rul
+    /epoc32/data/z/private/10282BC4/Rules/tacticon.rul
 
 #ifndef TOOLS
 
