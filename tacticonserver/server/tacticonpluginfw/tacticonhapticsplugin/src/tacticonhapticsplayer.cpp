@@ -30,11 +30,29 @@
 
 
 // Tacticons
-_LIT8( KPositiveTacticon,     "PositiveTacticon");
-_LIT8( KNegativeTacticon,     "NegativeTacticon");
+
+_LIT8( KPositiveTacticon,     "PositiveTacticon" );
+_LIT8( KNegativeTacticon,     "NegativeTacticon" );
 _LIT8( KNeutralTacticon,      "NeutralTacticon" );
-
-
+/*
+    _LIT8( KAlertTacticon,        "AlertTacticon" );
+    _LIT8( KInformationTacticon,  "InformationTacticon" );
+    _LIT8( KNewMessageTacticon,   "NewMessageTacticon" );
+    _LIT8( KNewEmailTacticon,     "NewEmailTacticon" );
+    _LIT8( KCalendarTacticon,     "CalendarTacticon" );
+    _LIT8( KClockTacticon,        "ClockTacticon" );
+    _LIT8( KRingingToneTacticon,  "RingingToneTacticon" );
+*/
+//  the tacticon names following are temporary mapped to NeutralTacticon,
+// they will be updated when the IVT files are ready.
+    _LIT8( KAlertTacticon,        "NeutralTacticon" );
+    _LIT8( KInformationTacticon,  "NeutralTacticon" );
+    _LIT8( KNewMessageTacticon,   "NeutralTacticon" );
+    _LIT8( KNewEmailTacticon,     "NeutralTacticon" );
+    _LIT8( KCalendarTacticon,     "NeutralTacticon" );
+    _LIT8( KClockTacticon,        "NeutralTacticon" );
+    _LIT8( KRingingToneTacticon,  "NeutralTacticon" );
+    
 // max length of tacticon names defined above
 const TInt KTacticonNameMaxLen = 128;
 
@@ -233,7 +251,28 @@ void CTacticonHapticsPlayer::PlayTacticon( TTacticonType aTacticon )
             break;
         case ENeutralTacticon:
             name = KNeutralTacticon;
-            break;                      
+            break;
+        case EAlertTacticon:
+            name = KAlertTacticon;
+            break;
+        case EInformationTacticon:
+            name = KInformationTacticon;
+            break;
+        case ENewMessageTacticon:
+            name = KNewMessageTacticon;
+            break;
+        case ENewEmailTacticon:
+            name = KNewEmailTacticon;
+            break;
+        case ECalendarTacticon:
+            name =KCalendarTacticon;
+            break;
+        case EClockTacticon:
+            name = KClockTacticon;
+            break;
+        case ERingingToneTacticon:
+            name = KRingingToneTacticon;
+            break;
         default:
             return;
         }

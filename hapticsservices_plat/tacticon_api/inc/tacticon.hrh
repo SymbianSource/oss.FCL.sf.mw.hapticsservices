@@ -26,7 +26,14 @@ enum TTacticonType
     ENoTacticon = 0,
     EPositiveTacticon,
     ENegativeTacticon,
-    ENeutralTacticon     
+    ENeutralTacticon,
+    EAlertTacticon,
+    EInformationTacticon,
+    ENewMessageTacticon,
+    ENewEmailTacticon,
+    ECalendarTacticon,
+    EClockTacticon,
+    ERingingToneTacticon
     };
 
 #endif // TACTICON_HRH

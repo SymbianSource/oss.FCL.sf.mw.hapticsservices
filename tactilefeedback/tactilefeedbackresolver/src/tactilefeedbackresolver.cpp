@@ -145,14 +145,6 @@ void CTactileFeedbackResolver::PlayFeedback(
     TBool aPlayAudio )
     {
     // TRACE("CTactileFeedbackResolver::PlayFeedback - Begin");
-    
-    // A temporary solution to change effect of ETouchFeedbackSensitiveSlider,
-    // it will be removed when the IVT files is ready.
-    if( ETouchFeedbackSensitiveSlider == aFeedback )
-        {
-        aFeedback = ETouchFeedbackBasicSlider;
-        }
-
     // Feedback filtering in order to prevent too many feedbacks
     // in a short time (e.g. when doing text selection).    
     TTime now;
@@ -410,13 +402,6 @@ void CTactileFeedbackResolver::PlayPreviewFeedback( TInt aLevel,
                           TTouchLogicalFeedback aFeedback,
                           TTouchFeedbackType aType )
     {
-    // A temporary solution to change effect of ETouchFeedbackSensitiveSlider,
-    // it will be removed when the IVT files is ready.
-    if( ETouchFeedbackSensitiveSlider == aFeedback )
-        {
-        aFeedback = ETouchFeedbackBasicSlider;
-        }
-    
     if ( aType & ETouchFeedbackVibra && iHapticsPlayer )
         {
         iHapticsPlayer->PlayPreviewFeedback( aLevel, aFeedback );
