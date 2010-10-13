@@ -51,7 +51,7 @@ SOURCE          testdomtactilefeedbackserverblocks.cpp
 SOURCE          testtactilefeedbackserver.cpp
 
 LIBRARY         euser.lib
-LIBRARY         StifTestInterface.lib
+LIBRARY         stiftestinterface.lib
 LIBRARY         stiftestengine.lib
 LIBRARY         tactileclickplugin.lib
 

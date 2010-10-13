@@ -22,7 +22,7 @@ DEFAULT
 
 PRJ_EXPORTS
 ../data/Tacticons.ivt         /epoc32/data/z/system/Sounds/Digital/tacticons.ivt
-../data/Tacticons.ivt         /epoc32/release/winscw/udeb/z/System/Sounds/Digital/tacticons.ivt
+../data/Tacticons.ivt         /epoc32/release/winscw/udeb/Z/System/Sounds/Digital/tacticons.ivt
 
 PRJ_MMPFILES
 ../tacticonpluginfw/group/tacticonpluginfw.mmp

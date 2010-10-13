@@ -26,10 +26,10 @@ PRJ_EXPORTS
 ../rom/tactileactionplugin.iby  CORE_IBY_EXPORT_PATH(mw, tactileactionplugin.iby)
 
 ../data/tactile.rul\
-    /epoc32/release/winscw/udeb/z/private/10282BC4/Rules/tactile.rul
+    /epoc32/RELEASE/winscw/UDEB/Z/private/10282BC4/Rules/tactile.rul
 
 ../data/tactile.rul\
-    /epoc32/data/z/private/10282BC4/Rules/tactile.rul
+    /epoc32/data/Z/private/10282BC4/Rules/tactile.rul
 
 #ifndef TOOLS
 

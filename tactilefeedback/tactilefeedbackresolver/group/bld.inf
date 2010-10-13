@@ -26,11 +26,11 @@ DEFAULT
 PRJ_EXPORTS
 // Tactile feedback effects files
 ../data/9.2_TactileFeedbackLevel1_A.ivt    /epoc32/data/z/private/10003B20/9.2_TactileFeedbackLevel1_A.ivt
-../data/9.2_TactileFeedbackLevel1_A.ivt    /epoc32/release/winscw/udeb/z/private/10003B20/9.2_TactileFeedbackLevel1_A.ivt
+../data/9.2_TactileFeedbackLevel1_A.ivt    /epoc32/release/winscw/udeb/Z/private/10003B20/9.2_TactileFeedbackLevel1_A.ivt
 ../data/9.2_TactileFeedbackLevel2_A.ivt    /epoc32/data/z/private/10003B20/9.2_TactileFeedbackLevel2_A.ivt
-../data/9.2_TactileFeedbackLevel2_A.ivt    /epoc32/release/winscw/udeb/z/private/10003B20/9.2_TactileFeedbackLevel2_A.ivt
+../data/9.2_TactileFeedbackLevel2_A.ivt    /epoc32/release/winscw/udeb/Z/private/10003B20/9.2_TactileFeedbackLevel2_A.ivt
 ../data/9.2_TactileFeedbackLevel3_A.ivt    /epoc32/data/z/private/10003B20/9.2_TactileFeedbackLevel3_A.ivt
-../data/9.2_TactileFeedbackLevel3_A.ivt    /epoc32/release/winscw/udeb/z/private/10003B20/9.2_TactileFeedbackLevel3_A.ivt
+../data/9.2_TactileFeedbackLevel3_A.ivt    /epoc32/release/winscw/udeb/Z/private/10003B20/9.2_TactileFeedbackLevel3_A.ivt
 
 // IBY file
 ../rom/tactilefeedbackresolver.iby  CORE_IBY_EXPORT_PATH(mw, tactilefeedbackresolver.iby)
