@@ -20,10 +20,13 @@
 
 #include <tactilefeedbacktrace.h>
 #include "tactilearearegistry.h"
+#include "tactilearearegistrythreadwatcher.h"
 #include "OstTraceDefinitions.h"
 #ifdef OST_TRACE_COMPILER_IN_USE
 #include "tactilearearegistryTraces.h"
 #endif
+
+const TInt KMaxChunkNameLength = 128;
 
 // ======== MEMBER FUNCTIONS ========
 
@@ -90,6 +93,7 @@ CTactileAreaRegistry::~CTactileAreaRegistry()
     iChunkArray.Close();
     iWgArray.Close();
     iTactileSemaphore.Close();
+    iTactileAreaRegistryThreadWatchers.ResetAndDestroy();
     }
 
 
@@ -141,9 +145,28 @@ EXPORT_C void CTactileAreaRegistry::HandleConnectL(
         {
         err = iTactileSemaphore.OpenGlobal( KTouchFeedbackSemaphore );
         User::LeaveIfError( err );
-        }   
+        }
+    
+    //do not leave even if something goes wrong
+    TBuf<KMaxChunkNameLength> buf;
+    buf.Format( _L( "*%S*" ),&aData.iChunkName );
+    TFindThread findThread( buf );
+    TFullName threadFullName;
+    err = findThread.Next( threadFullName );
+    if( !err )
+        {
+        RThread thread;
+        err = thread.Open( threadFullName );
+        if( !err )
+            {
+            CTactileAreaRegistryThreadWatcher* threadwatcher = NULL;
+            TRAP( err, threadwatcher = CTactileAreaRegistryThreadWatcher::NewL(
+                    this,thread,aData.iWindowGroupId ) ); //takes the ownership of thread.
+            if(!err)
+                iTactileAreaRegistryThreadWatchers.AppendL(threadwatcher);
+            }
+        }
     }
-   
     
 // ---------------------------------------------------------------------------
 // We handle diconnect by finding client's chunk, closing it and then
@@ -159,6 +182,19 @@ EXPORT_C void CTactileAreaRegistry::HandleDisconnect(
     {
     // #1
     iTactileSemaphore.Wait();
+    
+    //get rid of thread watcher
+    for ( TInt i=0; i < iTactileAreaRegistryThreadWatchers.Count(); i++ )
+        {
+        if( iTactileAreaRegistryThreadWatchers[i]->WGID() == aData.iWindowGroupId )
+            {
+            CTactileAreaRegistryThreadWatcher* tw = 
+                                    iTactileAreaRegistryThreadWatchers[i];
+            iTactileAreaRegistryThreadWatchers.Remove(i);
+            delete tw;
+            break;
+            }
+        }
     
     for ( TInt i=0; i < iChunkArray.Count(); i++ )
         {

@@ -29,7 +29,8 @@ CAPABILITY              CAP_GENERAL_DLL
 VENDORID                VID_DEFAULT
 
 SOURCEPATH              ../src
-SOURCE                  tactilearearegistry.cpp
+SOURCE                  tactilearearegistry.cpp 
+SOURCE                  tactilearearegistrythreadwatcher.cpp
 
 USERINCLUDE             ../inc
 USERINCLUDE             ../traces

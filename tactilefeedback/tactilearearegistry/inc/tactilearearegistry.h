@@ -30,7 +30,7 @@
 #include <touchlogicalfeedback.h>
 #include "tactileinternaldatatypes.h"
 
-
+class CTactileAreaRegistryThreadWatcher;
 /**
  *  Access to area registry from server side.
  *
@@ -301,7 +301,13 @@ private: // data
      * for determining whether pen up event should produde feedback or not.
      */
     TTactilePenDownEvent iLastPenDown;
-
+    
+    /**
+     * Array of thread watchers and doing RThread::Logon for the client.
+     * If client thread terminated unexpectedly 
+     * it will call CTactileAreaRegistry::HandleDisconnect to close chunk.
+     */
+    RPointerArray<CTactileAreaRegistryThreadWatcher> iTactileAreaRegistryThreadWatchers;
     };
 
 
